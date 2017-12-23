@@ -9,7 +9,7 @@ var callBack = function() {
 
   return a;
 };
-setTimeout(callBack, 500);/*?*/
+//setTimeout(callBack, 500);/*?*/
 
 // 8 Returned function
 

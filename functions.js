@@ -4,7 +4,7 @@
 
 sumFn(1,2) /*?*/
 console.log("The SUMFN :" + sumFn(1,2))
-//sumVAN(1,2) /*?*/
+sumVAN(1,2) /*?*/
 //sumVAA(1,2) /*?*/
 //obj1.sum(1,2);/*?*/
 //obj1.product(1,2);/*?*/
