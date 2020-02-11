@@ -1,0 +1,24 @@
+{
+  "name": "js-example",
+  "version": "0.1",
+  "description": "For JS traininging package.json, loadash, node, nodemon, debug , jest",
+  "main": "index.js",
+  "repository": "https://jayendranp@bitbucket.org/fr8in/js-example.git",
+  "author": "jay p <jay@fr8.in>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "jest":
+  {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
