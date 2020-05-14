@@ -4,3 +4,4 @@ yarn-error.log
 
 # Serverless directories
 .serverless
+node_modules
