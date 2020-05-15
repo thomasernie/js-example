@@ -16,8 +16,11 @@ Then run
 2) node index.js / array.js / functions.js
 
 ## Repoistory action
+Master -> dev
+Master -> Prod
 
-1) Create new local branch - clink on branch name
+1) Create new local branch from master
+    a) clink on branch name
 2) Commit local branch
 3) Push local branch to remote
 4) Everything fine - Lets merge
