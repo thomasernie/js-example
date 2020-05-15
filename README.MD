@@ -19,3 +19,5 @@ Then run
 
 1) Create new local branch - clink on branch name
 2) Commit local branch
+3) Push local branch to remote
+4) Everything fine - Lets merge
