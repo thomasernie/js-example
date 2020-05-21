@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://jayendranp@bitbucket.org/fr8in/js-example.git",
   "author": "jay p <jay@fr8.in>",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "test": "jest --watch",
