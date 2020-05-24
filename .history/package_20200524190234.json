@@ -11,7 +11,7 @@
     "jest": "^25.1.0"
   },
   "jest":
-  {
+  {
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
