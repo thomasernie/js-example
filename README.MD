@@ -62,3 +62,37 @@ ORM Concepts:
 2) Data Mapper
 Steps:
 yarn add sequelize mysql2
+
+
+## Sequlize 2
+1) Craeting plain linking file
+2) Association
+
+npx sequelize-cli model:generate --name Life --attributes from:date,lastName:date,userId:integer
+npx sequelize-cli seed:generate --name demo-life
+
+1)  One to One
+    User Has One Life
+    The HasOne association
+
+    The A.hasOne(B) association means that a One-To-One relationship exists between A and B, with the foreign key being defined in the target model (B).
+
+    The A.belongsTo(B) association means that a One-To-One relationship exists between A and B, with the foreign key being defined in the source model (A).
+
+2) One to Many
+    The A.hasMany(B) association means that a One-To-Many relationship exists between A and B, with the foreign key being defined in the target model (B).
+    npx sequelize-cli model:generate --name Project --attributes userId:integer,name:string
+
+3) Many To Many
+
+    The A.belongsToMany(B, { through: 'C' }) association means that a Many-To-Many relationship exists between A and B, using table C as junction table, which will have the foreign keys (aId and bId, for example). Sequelize will automatically create this model C (unless it already exists) and define the appropriate foreign keys on it.
+    The BelongsTo association
+
+    friends (userId,Firendid)
+
+The HasMany association
+
+npx sequelize-cli model:generate --name Friend --attributes userId:integer,lastName:date,userId:integer
+
+The BelongsToMany association
+npx sequelize-cli model:generate --name Life --attributes from:date,lastName:date,userId:integer

@@ -10,6 +10,5 @@ module.exports = {
   dialect: 'mysql',
   define: {
     "freezeTableName": true
-
   }
 };
