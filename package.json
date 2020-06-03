@@ -9,7 +9,8 @@
   "private": true,
   "scripts": {
     "test": "jest --watch",
-    "migrate": "npx sequelize-cli db:migrate"
+    "migrate": "npx sequelize-cli db:migrate",
+    "serve":"nodemon server.js"
   },
   "devDependencies": {
     "jest": "^25.1.0",

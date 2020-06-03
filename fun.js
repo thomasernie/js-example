@@ -16,8 +16,6 @@ const input = {
         {id: 3, name:'Rajesh'}
     ]
 }
-
-
     const studentMap = (input) =>{
         branchStudentsMap = []
         const {branchStudents, branches, student} = input
