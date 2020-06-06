@@ -22,11 +22,13 @@ const ob = {
   marks: {
     '10th': 81, '12th': 91, ug: { sem1: 75, sem2: 80 }
   },
-  log: console.log(this),
-  pass: function () { return this.marks.ug.sem1 > 40 ? 'pass' : 'fail' }
+  log () { console.log('inside obj', this) },
+  pass () { console.log(this.marks.ug.sem1 > 40 ? 'pass' : 'fail') }
 }
+ob.log()
+const result = ob.pass.bind(this)
+console.log('dyamic-ob', result)
 
-console.log('dyamic-ob', ob)
 const ob1 = {
   name: 'jay',
   marks: { '10th': 81, '12th': 91 }
