@@ -1,3 +1,3 @@
-const sum = require('./funcExport')
+const sum = require('./funcExport');
 
-console.log(sum(2, 2))
+console.log(sum(4, 5));

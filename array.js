@@ -1,5 +1,5 @@
 
-const _ = require('lodash')
+// const _ = require('lodash')
 const numbers = [1, 2, 3, 4]
 
 const object = { name: 'sanjay', age: 33 }
