@@ -51,3 +51,5 @@ function studentDetails(data) {
     console.log(branchStudentMap);
 }
 studentDetails(Input);
+
+//TO-DO do the above with map and filter 
