@@ -21,22 +21,20 @@ function studentDetails(data) {
     const student = data.student;
 
     let details = {};
-    let branchStudentMap = [];
 
-    branchStudent.forEach(obj => {
+    const branchStudentMap = branchStudent.map(obj => {
 
-        //getting branch object
-        const branchData = branch.find(val => {
+        const branch_data = branch.filter(val => {
             const branchName = obj.branchId === val.id;
             return branchName;
         });
+        const [branchData] = branch_data;
 
-        //getting student object
-        const studentName = student.find(val => {
+        const students = student.filter(val => {
             const students = obj.studentId === val.id;
             return students;
         });
-
+        const [studentName] = students;
 
         details = {
             id: obj.id,
@@ -45,8 +43,7 @@ function studentDetails(data) {
             studentId: obj.studentId,
             studentName: studentName.sName
         }
-
-        branchStudentMap.push(details);
+        return details;
     })
     console.log(branchStudentMap);
 }
