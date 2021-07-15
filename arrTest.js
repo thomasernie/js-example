@@ -23,7 +23,7 @@ function studentDetails(data) {
     let details = {};
     let branchStudentMap = [];
 
-    const test = branchStudent.forEach(obj => {
+    branchStudent.forEach(obj => {
 
         //getting branch object
         const branchData = branch.find(val => {
