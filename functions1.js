@@ -3,61 +3,40 @@ let valueVariable = 3 // "Three" //true
 
 
 // declartion
-const sum = function exampleFunction(num1, num2) {
-  console.log(num1 + num2)
-  return num1 + num2;
-}
+const sumTwo = ((a, b) => a + b);
+console.log(sumTwo(2, 4));
 
-
-
-// //2 Variable Assignment -- Named
-var sumVAN = function add(num1, num2) {
-  return num1 + num2;
-};
-
-//3 Variable Assignment -- Anonymous
-var sumVAA = function (num1, num2) {
-  return num1 + num2;
-};
 
 //4 Immediately invoked
-(function (num1, num2) {
-  return num1 + num2;
-}(1, 2)); /*?*/
-
+(function (a, b) {
+  console.log(a + b);
+  return a + b;
+}(2, 8));
 
 //5 Assigned and Invoked
-var sumAI = function (num1, num2) {
-  return num1 + num2;
-}(1, 2);/*?*/
-
+const greet = function (content) {
+  return content;
+}(`Hey,I'm nithishwar`);
+console.log(greet);
 
 //6 Property Assignment
-const obj1 = {
-  name: 'karthi',
-  sum: function add(num1, num2) {
-    return num1 + num2;
-  },
-  product: function prod(num1, num2) {
-    return num1 * num2;
+
+const objFunc = {
+  DOB: 2000,
+
+  calcAge: function () {
+    console.log(2021 - this.DOB);
   }
-};
-obj1.prod = function prod(num1, num2) {
-  return num1 * num2;
 }
-const obj2 = manipultae(obj1);
+console.log(objFunc);
 
-function manipultae(obj) {
-  let temp = { name: obj.name };
 
-  temp.name = 'jay';
+function nameChange(data) {
+  let temp = { name: 'nithish' };
+  temp = { name: data.name };
   return temp;
 }
-sumFn(1, 2) /*?*/
-sumVAN(1, 2) /*?*/
-sumVAA(1, 2) /*?*/
-//sumAI(1,2);
-obj1.sum(1, 2);/*?*/
-obj1.product(1, 2);/*?*/
-console.log(obj1.name);/*?*/
-obj1.prod(1, 2);/*?*/
+const obj = {
+  name: 'nithishwar'
+}
+console.log(nameChange(obj));
