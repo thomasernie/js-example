@@ -1,9 +1,9 @@
 const Input = {
-    branchStudent: [
+    branchStudents: [
         { id: 1, branchId: 10, studentId: 1 },
         { id: 2, branchId: 22, studentId: 2 },
         { id: 3, branchId: 22, studentId: 1 },
-        { id: 4, branchId: 10, studentId: 3 }
+        { id: 4, branchId: 33, studentId: 3 }
     ],
     branches: [
         { id: 10, name: "CSE" },
