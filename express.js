@@ -1,3 +1,7 @@
+
+// why npm?
+// why npm -g
+//
 const express = require('express')
 const app = express()
 const port = 3000
