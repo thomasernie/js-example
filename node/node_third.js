@@ -1,25 +1,37 @@
 const express = require('express');
 const app = express();
-const port = 8080;
-const fs = require('fs');
-const student = require('./func');
+const port = 4000;
 
+app.use(express.json());
 
-const fileIn = fs.readFileSync('./input.json', 'utf-8');
-const dataObj = JSON.parse(fileIn);
+function studentDetails(data) {
 
-
-
-// studentDetails(dataObj)
-// const output = ;
-
+    const branchStudent = data.branchStudents;
+    const branches = data.branches;
+    const students = data.students;
+    const branchStudentMap = branchStudent.map(branchDatas => {
+        return {
+            ...branchDatas,
+            branchName: branches.find(branch => {
+                const branchName = branchDatas.branchId === branch.id;
+                return branchName
+            })?.name,
+            studentName: students.find(student => {
+                const studentName = branchDatas.studentId === student.id;
+                return studentName
+            })?.sName,
+        }
+    })
+    console.log(branchStudentMap);
+};
 
 
 app.get('/', (req, res) => {
-    // const output = studentDetails(Input);
-    const output = student(dataObj);
-    res.send(output);
-
+    res.send('Start');
+});
+app.post('/', (req, res) => {
+    // console.log(req.body);
+    studentDetails(req.body);
+    res.send('created user');
 })
-
-app.listen(port, () => console.log('Listening'));
+app.listen(port, () => console.log("Listening"));
