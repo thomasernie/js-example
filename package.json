@@ -1,31 +1,3 @@
 {
-  "name": "js-example",
-  "version": "0.1",
-  "description": "For JS traininging package.json, loadash, node, nodemon, debug , jest",
-  "main": "index.js",
-  "repository": "https://jayendranp@bitbucket.org/fr8in/js-example.git",
-  "author": "jay p <jay@fr8.in>",
-  "license": "UNLICENSED",
-  "private": true,
-  "scripts": {
-    "test": "jest --watch",
-    "migrate": "npx sequelize-cli db:migrate"
-  },
-  "devDependencies": {
-    "jest": "^25.1.0",
-    "sequelize-cli": "^5.5.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/vendor/**"
-    ]
-  },
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.10"
-  }
+  "name": "js-example"
 }
