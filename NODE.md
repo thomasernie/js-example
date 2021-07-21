@@ -37,5 +37,6 @@
    "yarn up"                  -> updating a package/dependencies.
    "yarn remove"              -> removes a particular package installed.
 
-4) How to upgarde to new express js?
-=> yarn
+4) Express js? How to upgrade to new express js?
+=> Express is a web framework for Node.js.
+   
