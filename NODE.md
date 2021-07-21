@@ -22,7 +22,6 @@
    other ways to install -  npm install <packagename> , npm install <packagename> --save , npm install <package_name> --save-dev
        "npm install --save [package-name]"      -> installs the package and updates the dependencies in the package.json file/existing file. 
        "npm install --save-dev [package-name]"  -> installs the package and updates the dependencies in the development environment       (devdependencies).
-       "npm install --save [package-name]"      -> installs the package but does not update the dependencies.
 
 3) Why Yarn?
 => Yarn is also considered as a package manager for the code. 
@@ -39,4 +38,7 @@
 
 4) Express js? How to upgrade to new express js?
 => Express is a web framework for Node.js.
+   
+   npm install express --save            -> Helps in installing express in node terminal as a package and saving it in the dependencies.
+   npm install express --no-save         -> temporarily installing and not saving in the dependencies/package.json
    
