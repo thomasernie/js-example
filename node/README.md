@@ -4,13 +4,13 @@ node:
     * Node used to write server-side applications with access to the operating system, 
       file system, and everything else required to build fully-functional applications;
     * Each file node is treated as Modules;
-    * Module is an object referring to the functionality that will be exported from a file;git
+    * Module is an object referring to the functionality that will be exported from a file;
     * require() is a function used to import modules from other files or Node packages.
 
 node process: 
     * First install node from the official website;
     * npm install => to install npm in your system;
-    * npm init => It will download node module in that local directory;
+    * npm init => It will download node module and package.json file in that local directory;
     * If we need other extra modules('express');
     * npm install express => This will download the express modules inside Package.json file;
     * require('express') => to import and use that module in our app.
@@ -43,6 +43,7 @@ Example:
 
 require:
     * It allows to include modules in our app;
+
     * We can include inbuilt modules and local modules;
 
     require('express) => The require function that was passed 'express' returns module.export from express module;
@@ -62,4 +63,25 @@ express(Old version):
  
 Yarn:
     * Yarn is a package manager for our code;
+
+    * Yarn can be installed by npm 
+
+    => npm install --global yarn;
+
+    * Initializing the yarn in your work directory;
+
+    => yarn init 
+
+    * It will create a package.json in your current folder;
+
+    => yarn add [package] , yarn add[package]@[version] 
     
+    * To install the packages;
+
+    => yarn add [package] --dev
+
+    * Dev-dependencies in yarn;
+
+    => yarn upgrade [package]
+
+    * To update the excisting package;
