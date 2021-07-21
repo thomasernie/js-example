@@ -16,7 +16,7 @@ const str = '1'
 const num = 1
 let bl = false
 const nu = null
-const ud = undefined
+const ud = undefinednp
 const ob = {
     name: 'sanjay',
     marks: {
