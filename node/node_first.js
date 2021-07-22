@@ -1,9 +1,8 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const student = [
+    { id: 1, name: "Jay" },
+    { id: 2, name: "Sanjay" },
+    { id: 3, name: "Rajesh" }
+]
 
-app.get('/', (req, res) => {
-    res.send('Hello jay');
-})
-
-app.listen(port, () => console.log('Listening'));
+// console.log(`student: ${student}`);
+console.log('student', student);
