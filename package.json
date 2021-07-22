@@ -1,7 +1,7 @@
 {
-  "name": "js-example",
+  "name": "test",
   "version": "1.0.0",
-  "description": "",
+  "description": "studying npm",
   "main": "sum1.js",
   "directories": {
     "test": "test"
@@ -21,5 +21,6 @@
   "homepage": "https://github.com/fr8-in/js-example#readme",
   "dependencies": {
     "nodemon": "^2.0.12"
-  }
+  },
+  "devDependencies": {}
 }
