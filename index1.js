@@ -21,9 +21,9 @@ const student1 = {                                  // varaible declaration (stu
 
 const maped = student1.branchStudent.map(function(data){    // declaring varaible as maped - objectname.propertyname - function (parameter)
     
-    const branch = student1.branch.find(function(datas)   //derclaring branchname - finding datas(branchname, branchid) from parent array student1
+    const branch = student1.branch.find(function(datas)   //declared branchname - finding datas(branchname, branchid) from parent array student1
     {
-        return datas.id === datas.branchId;              // fetches data from branch
+        return datas.id = data.branchId;              // fetches data from branch
     }
     );
     const studentName = student1.student.find(function(data1)  // declare studentname - find from student array element
@@ -33,12 +33,12 @@ const maped = student1.branchStudent.map(function(data){    // declaring varaibl
    return {                                         // fetches the data from branch and student array and forms an array
        id:data.id, 
        branchId:data.branchId,
-       branchName:data.branchName, 
+       branchName:branch.name, 
        studentId:data.studentId,
        studentName:studentName.name,
     };
 })
 
  console.log('branchstudentMap: ',maped);       // prints the output
-// console.log(student1.branch)
+console.log(student1.branch)
 // console.log(student1.student)
