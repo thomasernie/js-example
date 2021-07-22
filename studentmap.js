@@ -19,12 +19,18 @@ const student1 = {                                  // varaible declaration (stu
     ]
 }; 
 
+
+// seperate separte code blocks
+// naming convention
 const maped = student1.branchStudent.map(function(data){    // declaring varaible as maped - objectname.propertyname - function (parameter)
-    
-    const branch = student1.branch.find(function(datas)   //declared branchname - finding datas(branchname, branchid) from parent array student1
+    data = student1.branchStudent
+    const branch = student1.branch.find(
+        function(datas)   //declared branchname - finding datas(branchname, branchid) from parent array student1
     {
         return datas.id = data.branchId;              // fetches data from branch
     }
+
+
     );
     const studentName = student1.student.find(function(data1)  // declare studentname - find from student array element
     {
