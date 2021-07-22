@@ -32,8 +32,7 @@ function studentDetails(data) {
 
 function nameList(data) {
     const names = data.map(names => {
-        const studName = names.studentName;
-        return studName;
+        return names.studentName;
     })
     console.log(names);
 }
