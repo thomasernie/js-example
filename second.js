@@ -3,3 +3,4 @@ const i="We act like owners We are frugal. We value our money, time & resources 
   {
       console.log("our code=",i);
   }
+  
