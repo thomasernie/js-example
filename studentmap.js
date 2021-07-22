@@ -40,5 +40,5 @@ const maped = student1.branchStudent.map(function(data){    // declaring varaibl
 })
 
  console.log('branchstudentMap: ',maped);       // prints the output
-console.log(student1.branch)
+// console.log(student1.branch)
 // console.log(student1.student)
