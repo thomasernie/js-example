@@ -53,20 +53,21 @@ const input = {
         }
     ]
 };
-async function display() {
-    const data = await fetch('http://localhost:3000');
-    return data
-};
-display()
-    .then(data => data.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err, "error"));;
-
-// Send data
-// Get data
-// Print data
 app1.get('/', (req, res) => {
     res.send(input);
 });
+app1.get('/user', (req, res) => {
+    async function display() {
+        const data = await fetch('http://localhost:3000/student');
+        return data
+    };
+    display()
+        .then(data => data.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err, "error"));;
+});
+// Send data
+// Get data
+// Print data
 
 app1.listen(port1, () => console.log('Port 2 Listening'));

@@ -1,9 +1,18 @@
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 const express = require('express');
 const app = express();
-const port = 3030;
+const port = 6000;
 app.use(express.json());
 
+//node first 
+const student = [
+    { id: 1, name: "Jay" },
+    { id: 2, name: "Sanjay" },
+    { id: 3, name: "Rajesh" }
+]
+
+
+// console.log('student', student);
 
 function studentDetails(data) {
     const branchStudent = data.branchStudents;
@@ -56,4 +65,4 @@ app.post('/student', (req, res) => {
 })
 
 
-app.listen(port, () => { console.log('Listening') });
+app.listen(port, 'Listening');
