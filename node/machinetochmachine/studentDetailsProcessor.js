@@ -1,7 +1,8 @@
 const fetch = require('node-fetch');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4050;
+let details;
 
 app.use(express.json());
 
@@ -24,22 +25,14 @@ function studentDetails(data) {
     })
     return branchStudentMap;
 };
-let details;
-async function dataTrans() {
 
-    const inputData = await fetch('http://localhost:4000');
-    const datas = await inputData.json();
-    return datas;
-
-}
-dataTrans()
-    .then(data => data)
-    .then(res => { details = (studentDetails(res)) })
+fetch('http://localhost:4040')
+    .then(data => data.json())
+    .then(data => { return details = studentDetails(data) })
     .catch(err => err);
 
 app.get('/', (req, res) => {
-    console.log(details);
-    res.send(details);
+    res.json(details);
 });
 
 app.listen(port, () => console.log('Port one Listening'));

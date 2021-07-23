@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 const express = require('express');
 const app1 = express();
-const port1 = 4000;
+const port1 = 4040;
 
 app1.use(express.json());
 
@@ -54,9 +54,13 @@ const input = {
     ]
 };
 
+fetch('http://localhost:4050')
+    .then(data => data.json())
+    .then(data => console.log(data));
+
+
 app1.get('/', (req, res) => {
     res.send(input);
 });
-
 
 app1.listen(port1, () => console.log('Port two Listening'));
