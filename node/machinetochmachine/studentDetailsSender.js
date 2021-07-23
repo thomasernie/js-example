@@ -59,6 +59,9 @@ fetch('http://localhost:4050')
     .then(data => console.log(data));
 
 
+// Send data
+// Get data
+// Print data
 app1.get('/', (req, res) => {
     res.send(input);
 });
