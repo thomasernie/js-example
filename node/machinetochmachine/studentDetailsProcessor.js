@@ -26,9 +26,11 @@ function studentDetails(data) {
 };
 let details;
 async function dataTrans() {
+
     const inputData = await fetch('http://localhost:4000');
     const datas = await inputData.json();
     return datas;
+
 }
 dataTrans()
     .then(data => data)
