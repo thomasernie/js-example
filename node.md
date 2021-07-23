@@ -42,16 +42,25 @@
           downloading is dependencies. it is that we are depend on that package to develop ours.
 
 
-Why npm -g?
+2.Why npm -g?
           npm -g (global).it is a command used in command line to install the current package as a global package .so that we can use it any time and we no need to install the package every time .
 
-what is -save--dev?
+2.what is -save--dev?
           # save and save dev command is used to download different dependencies.it will download and install
           from this npm servers.when we normally install the packages it manually installs as dependency.
           if we specifically add  -D or save dev ,it is installed as a developmentdependencies(dev dependencies).
 
           # these dev dependencies only has the packages that are not needed for the production.they are for testing packages.
 
- what is yarn why we are using it?
-          # YARN(yet another resourse negotiator) is also a package manager.npm is needed to install yarn where npm is installed with node automatically.it was developed by facebook and now its a open source code.while it was developed its main intension was to fix performance and security.yarn is literally fast compared to npm             
+3. what is yarn why we are using it?
+          # YARN(yet another resourse negotiator) is also a package manager.npm is needed to install yarn where npm is installed with node automatically.it was developed by facebook and now its a open source code.while it was developed its main intension was to fix performance and security.yarn is literally fast compared to npm    
+
+4.how to upgrade to new express js?
+          # express js
+                      it is a web framework for javascript.when we want to make a website using javascript.so javascript uses express js.it is a light weight web application for node
+             why do we need a framework?
+                               web fframework is designed to support the development of web applications.web framework provides standard build applications.
+             to install new express js : 
+                              we can run npm i express@latest --save.to update the version globally ,we can use npm i express@latest-g
+                                                  
                            
