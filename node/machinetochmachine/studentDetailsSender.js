@@ -56,8 +56,8 @@ const input = {
 
 fetch('http://localhost:4050')
     .then(data => data.json())
-    .then(data => console.log(data));
-
+    .then(data => console.log(data))
+    .catch(err => console.log(err, "error"));
 
 // Send data
 // Get data

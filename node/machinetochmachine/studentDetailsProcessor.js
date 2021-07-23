@@ -29,10 +29,10 @@ function studentDetails(data) {
 fetch('http://localhost:4040')
     .then(data => data.json())
     .then(data => { return details = studentDetails(data) })
-    .catch(err => err);
+    .catch(error => assert.isNotOk(error, 'Promise Error'));
 
 app.get('/', (req, res) => {
-    res.json(details);
+    res.send(details);
 });
 
 app.listen(port, () => console.log('Port one Listening'));
