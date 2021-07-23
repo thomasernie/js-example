@@ -24,7 +24,7 @@ function studentDetails(data) {
     })
     return branchStudentMap;
 };
-
+let details;
 async function dataTrans() {
     const inputData = await fetch('http://localhost:4000');
     const datas = await inputData.json();
@@ -32,11 +32,12 @@ async function dataTrans() {
 }
 dataTrans()
     .then(data => data)
-    .then(res => console.log(studentDetails(res)))
+    .then(res => { details = (studentDetails(res)) })
     .catch(err => err);
 
 app.get('/', (req, res) => {
-    res.send(req);
+    console.log(details);
+    res.send(details);
 });
 
 app.listen(port, () => console.log('Port one Listening'));
