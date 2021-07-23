@@ -54,6 +54,9 @@ const input = {
     ]
 };
 
+// Send data
+// Get data
+// Print data
 app1.get('/', (req, res) => {
     res.send(input);
 });

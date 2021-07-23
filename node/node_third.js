@@ -35,7 +35,7 @@ app.post('/user', (req, res) => {
     if (Object.keys(body).length == 0) return res.send('No data detected'), console.log('No data detected');
 
     if (body.branchStudents.length !== 0 && body.branches.length !== 0 && body.students.length !== 0) {
-        studentDetails(body);
+        studentDetails(body); 
         res.send('user created');
     }
     else {
