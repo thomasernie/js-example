@@ -1,22 +1,17 @@
-const Input = {
-    branchStudent: [
-        { id: 1, branchId: 10, studentId: 1 },
-        { id: 2, branchId: 22, studentId: 2 },
-        { id: 3, branchId: 22, studentId: 1 },
-        { id: 4, branchId: 22, studentId: 3 }
-    ],
-    branches: [
-        { id: 10, name: "CSE" },
-        { id: 22, name: "IT" }
-    ],
-    students: [
-        { id: 1, sName: "Jay" },
-        { id: 2, sName: "Sanjay" },
-        { id: 3, sName: "Rajesh" }
-    ]
-};
+// fix this
+const express = require('express');
+const app = express();
+const port = 3000;
+
+let data;
+
+app.use(express.json());
+
+
+
 function studentDetails(data) {
-    const branchStudent = data.branchStudent;
+
+    const branchStudent = data.branchStudents;
     const branches = data.branches;
     const students = data.students;
     const branchStudentMap = branchStudent.map(branchDatas => {
@@ -33,7 +28,20 @@ function studentDetails(data) {
         }
     })
     return branchStudentMap;
-}
-console.log(studentDetails(Input));
+};
 
-//TO-DO do the above with map and filter
+
+
+
+app.get('/', (req, res) => {
+    res.send('Hello jay');
+})
+
+app.post('/user', (req, res) => {
+    data = studentDetails(req.body);
+    res.send('out');
+})
+
+
+
+app.listen(port, () => console.log('Port one Listening'));
