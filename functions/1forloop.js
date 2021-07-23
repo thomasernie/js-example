@@ -14,13 +14,5 @@ const ages = [ 33, 12, 23, 43, 16, 18, 64, 86, 76, 91, 90, 21, 43];
 
 for (let i = 0; i < companies.length; i++)
 {
-    console.log(companies[i]);
+    console.log(companies);
 }
-
-// for each
-
-companies.forEach(function(company)
-{
-    console.log(company.name);
-
-});
