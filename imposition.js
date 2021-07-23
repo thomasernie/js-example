@@ -1,5 +1,12 @@
-const i ="We are frugal. We value our money, time & resources and ensure they are deployed in the most productive way";
-for (j = 0; j <= 3 ; j++)
-{
-  console.log("owners= ",i);
+const code="We believe in ordinary people who can do extraordinary things"
+
+function owner(cod){
+  
+  for(let y=0;y<=100;y++)
+  
+  console.log(cod)
+  
 }
+
+
+owner(code)
