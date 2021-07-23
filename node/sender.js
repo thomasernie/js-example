@@ -53,11 +53,14 @@ const input = {
         }
     ]
 };
-
-fetch('http://localhost:4050')
+async function display() {
+    const data = await fetch('http://localhost:3000');
+    return data
+};
+display()
     .then(data => data.json())
     .then(data => console.log(data))
-    .catch(err => console.log(err, "error"));
+    .catch(err => console.log(err, "error"));;
 
 // Send data
 // Get data
@@ -66,4 +69,4 @@ app1.get('/', (req, res) => {
     res.send(input);
 });
 
-app1.listen(port1, () => console.log('Port two Listening'));
+app1.listen(port1, () => console.log('Port 2 Listening'));
