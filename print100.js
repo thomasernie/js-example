@@ -1,15 +1,15 @@
-const code ="We act like owners.We are frugal. We value our money, time & resources and ensure they are deployed in the most productive way";
-// for (j = 0; j < 5; j++)
+const i ="We act like owners.We are frugal. We value our money, time & resources and ensure they are deployed in the most productive way";
+// for (j = 1; j <=; j++)
 // {
 //   console.log("our code = ",i)
 // }
 
 
-function print(message){
-  for (let j = 1; j <= 100; j++)
+function owner(print){
+  for (let j = 0; j < 5; j++)
   
-    console.log(j,message)
+    console.log(print)
   
 }
 
-print(code)
+owner(i)
