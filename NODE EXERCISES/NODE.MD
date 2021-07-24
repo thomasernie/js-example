@@ -6,7 +6,7 @@
    "npm init"                  -> to initailize a javascript or node js project.
    "npm scripts"               -> to display the commands used.
    "package.json"              -> it holds the important data about the particular project before publishing.
-   ".json"                     -> stores simple data structures and objects in JavaScript Object Notation (JSON) format
+   ".json"                     -> stores simple data structures and objects in JavaScript Object Notation (JSON) format and send it to server
    "package-lock.json"         -> default packages
    "npm install --production"  -> installing npm for production environment. 
    "npm install --development" -> installing npm for developing environment.

@@ -19,7 +19,7 @@ const student1 = {                                  // varaible declaration (stu
     ]
 }; 
 
-const maped = student1.branchStudent.map(function(data){    // declaring varaible as maped - objectname.propertyname - function (parameter)
+const map = student1.branchStudent.map(function(data){    // declaring varaible as maped - objectname.propertyname - function (parameter)
     
     const branch = student1.branch.find(function(datas)   //declared branchname - finding datas(branchname, branchid) from parent array student1
     {
