@@ -15,7 +15,7 @@ const studentData = {                                  // varaible declaration (
         { id: 3, name: "Rajesh" }
     ]
 };
-const branchDetails = studentData.branch.map(function(data){
+const branchDetails = studentData.branch.find(function(data){
         return data;              
     }
     );
