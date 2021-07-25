@@ -1,18 +1,16 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
-  "main": "node_first.js",
+  "description": "node: \r     * Node is a JavaScirpt Runtime for building server-side or desktop applications;\r     * Node is written in c++ and v8 engine;\r     * Node used to write server-side applications with access to the operating system, \r       file system, and everything else required to build fully-functional applications;\r     * Each file node is treated as Modules;\r     * Module is an object referring to the functionality that will be exported from a file;\r     * require() is a function used to import modules from other files or Node packages.",
+  "main": "studentDetails.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "nithishwar",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "lodash": "^4.17.21",
-    "nodemon": "^2.0.12",
-    "socket.io": "^4.1.3",
+    "fetch": "^1.1.0",
     "node-fetch": "^2.6.1"
   }
 }

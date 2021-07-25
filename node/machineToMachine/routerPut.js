@@ -1,4 +1,7 @@
-{
+const fetch = require('node-fetch')
+const express = require('express');
+const route = express.Router();
+const input = {
     "branchStudents": [
         {
             "id": 1,
@@ -46,3 +49,23 @@
         }
     ]
 }
+
+
+const options2 = {
+    method: "POST",
+    mode: 'cors',
+    headers: {
+        "Content-Type": 'application/json'
+    },
+    body: JSON.stringify(input)
+}
+
+
+
+route.get('/student', async (req, res) => {
+    const resp = await fetch('http://localhost:1000/student', options2);
+    const studentDetails = await resp.json();
+    res.send(studentDetails);
+})
+
+module.exports = route;
