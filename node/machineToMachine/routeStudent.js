@@ -1,6 +1,7 @@
 const fetch = require('node-fetch')
 const express = require('express');
 const route = express.Router();
+
 const input = {
     "branchStudents": [
         {
@@ -50,7 +51,6 @@ const input = {
     ]
 }
 
-
 const options2 = {
     method: "POST",
     mode: 'cors',
@@ -59,8 +59,6 @@ const options2 = {
     },
     body: JSON.stringify(input)
 }
-
-
 
 route.get('/student', async (req, res) => {
     const resp = await fetch('http://localhost:1000/student', options2);

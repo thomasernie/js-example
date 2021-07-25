@@ -1,5 +1,5 @@
-const getData = require('./routerGet');
-const putData = require('./routerPut');
+const routeObject = require('./routeObject');
+const routeStudent = require('./routeStudent');
 const express = require('express');
 const app = express();
 const port = 5000;
@@ -7,13 +7,14 @@ const port = 5000;
 
 app.use(express.json());
 
-app.use(getData);
+//Getting object as return
+app.use(routeObject);
 
-app.use(putData);
-
-
+//Getting student details
+app.use(routeStudent);
 
 app.listen(port, () => console.log('Port 2 Listening'));
+
 
 
     // post to 1000 http://localhost:1000/hello
