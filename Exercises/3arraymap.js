@@ -20,7 +20,7 @@ const branchDetails = studentData.branch.find(function(data){
     }
     );
  
-const studentDetails = studentData.student.find(function(data){
+const studentDetails = studentDatas.students.find(function(data){
     return data;
 })
 
@@ -30,19 +30,19 @@ const details = studentDatas.branchStudents.map(function(data){
         branchId:data.branchId,
         branchName:branchDetails.name, 
         studentId:data.studentId,
-        studentName:studentDetails.name,
+        studentName:studentDatas.name,
      };
  })
 
  const branchStudentMaper = function(data){
     return {                                        
            id:data.id, 
-           branchId:data.branchId,
+           branchId:data.branchesId,
            branchName:branchDetails.name, 
            studentId:data.studentId,
-           studentName:studentDetails.name,
+           studentName:studentDatas.name,
         };
     }
 //  console.log('branch: ',branchDetails); 
 //  console.log('student: ',studentDetails)
-console.log('branchstudentMap: ', details);
+console.log('branchstudentMap: ', studentDatas);
