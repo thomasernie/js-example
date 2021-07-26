@@ -1,33 +1,99 @@
-const Input = {
-    branchStudent: [
+
+const studentDatas = {                                  // varaible declaration (studentData is an object)
+    branchStudents:[                                 // array of elements
         { id: 1, branchId: 1, studentId: 1 },
         { id: 2, branchId: 2, studentId: 2 },
         { id: 3, branchId: 2, studentId: 1 },
         { id: 4, branchId: 1, studentId: 3 }
     ],
-    branch: [
+    branches: [
         { id: 1, name: "CSE" },
         { id: 2, name: "IT" }
     ],
-    student: [
+    students: [
         { id: 1, name: "Jay" },
         { id: 2, name: "Sanjay" },
         { id: 3, name: "Rajesh" }
     ]
-}
-// Output: branchStudentMap:  [
+};
+
+// const branchStudentMaps =  [
 //     { id: 1, branchId: 1, branchName: "CSE", studentId: 1, studentName: "Jay" },
 //     { id: 2, branchId: 2, branchName: "IT", studentId: 2, studentName: "Sanjay" },
 //     { id: 3, branchId: 2, branchName: "IT", studentId: 1, studentName: "Jay" },
 //     { id: 4, branchId: 1, branchName: "CSE", studentId: 3, studentName: "Rajesh" }
-// ]
-// });
-let a=Input.branchStudent;
-let b=Input.branch;
-let c=Input.student;
+// ];
 
-const start=a.map(starts => starts);
-console.log(start);
+const branchStudents = studentDatas.branchStudents;
+const branches = studentDatas.branches;
+const students = studentDatas.students;
 
 
+const studentNameFinder = (studentId) =>students.find(student => student.id === studentId).name;
+const branchNameFinder =(branchID) =>branches.find(branch =>branch.id ===branchID).name;
+const branchStudentMapper = (branchStudent)  =>
+{ 
+    return {
+        id:branchStudent.id,
+        branchId:branchStudent.branchId,
+        studentId: branchStudent.studentId,
+        branchName: branchNameFinder(branchStudent.branchId),
+        studentName: studentNameFinder(branchStudent.studentId)
+    }
+};
+
+// const branchStudentMap = branchStudentMapper({ id: 1, branchId: 1, studentId: 1 });
+
+const branchStudentMaps = branchStudents.map(branchStudentMapper);
+
+console.log(branchStudentMaps);
+// function (student) 
+//{ 
+//    return {student.name === 'Jay' } 
+//}
+// student => student.name === 'Jay'
+
+//const filtredStudents = students.find(student => student.name === 'Jay' )
+//const student = students.find(student => student.name === 'Jay' )
+//
+
+
+
+// const studentName = 
+
+// console.log("studentName", studentName);
+// const ids = branchStudents.map(branchStudentMapper)
+
+// console.log(ids);
+// const branchDetails = studentData.branch.find(function(data){
+//         return data;              
+//     }
+//     );
+ 
+// const studentDetails = studentData.student.find(function(data){
+//     return data;
+// })
+
+// const details = studentDatas.branchStudents.map(function(data){
+//  return {                                        
+//         id:data.id, 
+//         branchId:data.branchId,
+//         branchName:branchDetails.name, 
+//         studentId:data.studentId,
+//         studentName:studentDetails.name,
+//      };
+//  })
+
+//  const branchStudentMaper = function(data){
+//     return {                                        
+//            id:data.id, 
+//            branchId:data.branchId,
+//            branchName:branchDetails.name, 
+//            studentId:data.studentId,
+//            studentName:studentDetails.name,
+//         };
+//     }
+// //  console.log('branch: ',branchDetails); 
+// //  console.log('student: ',studentDetails)
+// console.log('branchstudentMap: ', details);
 
