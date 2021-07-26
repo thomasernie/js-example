@@ -37,10 +37,18 @@
    "yarn remove"              -> removes a particular package installed.
 
 4) Express js? How to upgrade to new express js?
-=> Express is a web framework for Node.js.
-   It is used in designing and building web applications quickly and easily.
+=> Express is a server side or back end web framework for Node.js - A framework acts like a library(pre-defined modules a program can use), that provides a base 
+   for an application.
+   It responds to http requests.
 
-   
-   npm install express --save            -> Helps in installing express in node terminal as a package and saving it in the dependencies.
-   npm install express --no-save         -> temporarily installing and not saving in the dependencies/package.json
-   
+   It is used in designing and building web applications quickly and easily.
+   using express we can develop API
+   npm install -g express             -> install express framework globally
+   npm install express --save         -> install express in node_module directory and create a directory named express inside the node_module
+   npm install express --no-save      -> To install Express temporarily and not add it to the dependencies list.
+
+
+
+
+
+
