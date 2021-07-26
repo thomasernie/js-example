@@ -19,22 +19,22 @@ const Input = {
 //object is an unordered collection of related data types,in the form of "key:value" pairs inside the brackets 
 //array of objects
    
-   //console.log(Input.branchStudent);
+   console.log(branchStudent);
 
-   //const branchStudent = Input.branchStudent;
-   //const branch = Input.branch;
-   //const student = Input.student;
+   const branchStudent = Input.branchStudent;
+   const branch = Input.branch;
+   const student = Input.student;
 
-   //Array.find()function- returns only one object
+   //Array.find()function-  returns the value of the array element that passes a test (provided by a function).
 
-const branchDatas = Input.branch.find(myfunction);
+const branchDatas = Input.branch.filter(myfunction);//
 
 function myfunction(value){
      
      return value;
   }
 
-const studentDatas = Input.student.find(myfunction);
+const studentDatas = Input.student.filter(myfunction);
 
 function myfunction(value){
     
