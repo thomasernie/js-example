@@ -28,7 +28,7 @@
          =>Do not mix --save-dev with collaboration development, if someone cloned your package code from a source version control system like github then NPM will surely install all devDependencies i.e package installed using --save-dev also.
 3.why yarn?
     
-    => Yarn(Yet Another Resource Negotiator) is a new package manager for node.js.
+        => Yarn(Yet Another Resource Negotiator) is a new package manager for node.js.
                  
    =>It is distributed under the BSD license( Berkeley Software Distribution ,it is a free software licenses, imposing minimal restrictions on the use and distribution of covered software). At the time of writing this post, the current Yarn version is 0.17.10.
 

@@ -21,6 +21,17 @@ console.log(Input.branchStudent);
  const branch = Input.branch;
  const student = Input.student;
 
+ //let id = branch.find(myfunction);
+
+ //function myfunction
+
+ //branchStudent.map(Input.branchStudent);
+ 
+
+
+
+
+
  
 
 
