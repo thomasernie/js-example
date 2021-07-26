@@ -1,5 +1,5 @@
-const cityDatas = {                                  // varaible declaration (studentData is an object)
-    city:[                                 // array of elements
+const cityDatas = {                                  
+    cities:[                                 
         { id: 1, branchId:1, connectedCityId: 1, name: "Chennai" },
         { id: 2,branchId:1, connectedCityId: 1, name: "K.K.Nagar" },
         { id: 3,branchId:1, connectedCityId: 3, name: "Sreperumbudur" },
@@ -12,9 +12,30 @@ const cityDatas = {                                  // varaible declaration (st
         { id: 2, name: "Coimbatore-Branch" }
     ],
 };
+const cities = cityDatas.cities;
+const branches = cityDatas.branches;
 
-console.log(cityDatas);
+const branchName = branchId => branches.find(branch => branch.id === branchId).name;
+const connectedCity = connectedId => cities.find(city => city.id === connectedId).name;
+//console.log(cityName)
 
+const branchCityMapper = (cities)  =>
+{ 
+    return {
+        id:cities.id,
+        branchId:cities.branchId,
+        branch:branchName(cities.branchId),
+        connectedCityId:cities.connectedCityId,
+        connectedCity:connectedCity(cities.connectedCityId),
+        name:cities.name
+    }
+};
+
+const branchCityMaps = cities.map(branchCityMapper);
+console.log('conncetedCityBranchMaps  =', branchCityMaps);
+
+
+//console.log('connectedCityBranchMaps :', branchCityMapper)
 // const conncetedCityBranchMaps = [                                 // array of elements
 //         { id: 1, branchId:1,branch: "Chennai-HO" , connectedCityId: 1,connectedCity:"Chennai", name: "Chennai" },
 //         { id: 2,branchId:1, branch: "Chennai-HO" ,connectedCityId: 1,connectedCity:"Chennai", name: "K.K.Nagar" },
