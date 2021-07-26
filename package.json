@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/fr8-in/js-example#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "yarn": "^1.22.10"
   }
