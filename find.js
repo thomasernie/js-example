@@ -27,14 +27,14 @@ const Input = {
 
    //Array.find()function-  returns the value of the array element that passes a test (provided by a function).
 
-const branchDatas = Input.branch.filter(myfunction);//
+const branchDatas = Input.branch.find(myfunction);
 
 function myfunction(value){
      
      return value;
   }
 
-const studentDatas = Input.student.filter(myfunction);
+const studentDatas = Input.student.find(myfunction);
 
 function myfunction(value){
     
