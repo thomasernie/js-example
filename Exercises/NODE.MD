@@ -38,6 +38,8 @@
 
 4) Express js? How to upgrade to new express js?
 => Express is a web framework for Node.js.
+   It is used in designing and building web applications quickly and easily.
+
    
    npm install express --save            -> Helps in installing express in node terminal as a package and saving it in the dependencies.
    npm install express --no-save         -> temporarily installing and not saving in the dependencies/package.json
