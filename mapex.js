@@ -15,12 +15,16 @@ const Input = {
         { id: 3, name: "Rajesh" }
     ]
 };
+//array is an object that can store multiple elements([])
+//object is an unordered collection of related data types,in the form of "key:value" pairs inside the brackets 
+//array of objects
+// Array.find()function returns only one object
+   
+   //console.log(Input.branchStudent);
 
-console.log(Input.branchStudent);
-
-   const branchStudent = Input.branchStudent;
-   const branch = Input.branch;
-   const student = Input.student;
+   //const branchStudent = Input.branchStudent;
+   //const branch = Input.branch;
+   //const student = Input.student;
 
 const branchDatas = Input.branch.find(myfunction);//
 
@@ -50,7 +54,6 @@ const datas = Input.branchStudent.map(function(value){
  })
  console.log('branchStudentMap:',datas);
  
-
  
 
 

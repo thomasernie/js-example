@@ -39,15 +39,18 @@
     =>that was the reason Yarn appeared in the first place. 
     The first thing to do is to install Yarn globally on your system using npm (Yarn is available as a NPM package itself).
 npm install -g yarn
+4.how to maintain external dependancy?
+   dependencies=>Specify any other modules that a given module (represented by the package) modules which are required at runtime  
+
 4.How to upgrade to new express js?
   express.js=>Creates an Express application. The express() function is a top-level function exported by the express module.
 
                    const express = require('express')
                    const app = express()
-            => It is a back end web application framework for Node.js, released as free and open-source software under the MIT License. 
+            => It is a back end web application framework for Node.js, released as free and open-source software 
             
             =>It is designed for building web applications and APIs.
-            =>It has been called the de facto standard server framework for Node.js.
-   upgrade new express js =>         
+   upgrade new express js =>   
+         
 
       
