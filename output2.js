@@ -61,8 +61,24 @@ let studen=Input.student
 
 
 
-
-let final=start.map((val)=>{
-    return(val.branchId)
+const final=start.map((data)=>{
+    
+    const val=names.filter((vals)=>{
+        const datas = vals.id === data.branchId
+        return datas;
+    })
+    const [name] = val;
+    
+    const students=studen.filter((values)=>{
+        const value=values.id === data.studentId
+        return value
+    })
+    const [nam] = students
+    // return nam.name
+    return {branchname:name.name,studentname:nam.name,id:data.id,branchId:data.branchId,studentId:data.studentId};
 })
-  console.log(final)
+
+
+console.log(final)
+
+
