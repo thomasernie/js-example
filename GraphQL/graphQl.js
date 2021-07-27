@@ -20,10 +20,8 @@ app.get('/city', async (req, res) => {
         limit: 4
     }
 
-    const cityDetails = async () => {
-        return await client.request(query, variables).then(result => result).catch((error) => console.log(error))
-    };
-    res.send(await cityDetails())
+  
+    res.send(await client.request(query, variables));
 
 })
 
