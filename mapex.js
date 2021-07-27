@@ -27,23 +27,10 @@ const Input = {
 
    //Array.find()function- returns only one object
 
-const branchDatas = Input.branch.find(myfunction);
-
-function myfunction(value){
-     
-     return value;
-  }
-
-const studentDatas = Input.student.find(myfunction);
-
-function myfunction(value){
-    
-    return value;
-
-}
-//
+//iterate
+//map function- applies a function over every element and then returns the new array.
  
-const datas = Input.branchStudent.map(function(value){
+let datas = Input.branchStudent.map(function(value){
      
     return {
          id:value.id,
