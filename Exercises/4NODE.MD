@@ -37,8 +37,7 @@
    "yarn remove"              -> removes a particular package installed.
 
 4) Express js? How to upgrade to new express js?
-=> Express is a server side or back end web framework for Node.js - A framework acts like a library(pre-defined modules a program can use), that provides a base 
-   for an application.
+=> Express is a server side or back end web framework for Node.js - A framework acts like a library(pre-defined modules a program can use),   that provides a base for an application.
    It responds to http requests.
 
    It is used in designing and building web applications quickly and easily.
@@ -46,9 +45,14 @@
    npm install -g express             -> install express framework globally
    npm install express --save         -> install express in node_module directory and create a directory named express inside the node_module
    npm install express --no-save      -> To install Express temporarily and not add it to the dependencies list.
+   npx kill-port 8080                 -> to kill the process currently using a port on localhost
+   npm install cookie-parser --save   -> it is node.js middleware for handling JSON,Raw,text and url form of data.
+   npm install cookie-parser --save   -> 
+   npm install multer --save          ->
+   middleware                         -> it is a software which acts as a bridge between a Operating system and a network/web applications.
 
 
-
-
-
-
+5) How to use old express?
+=> To use older express versions, install the application generator as a global npm package and then launch it:
+   npm install -g express-generator => 
+   express
