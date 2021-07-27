@@ -20,7 +20,7 @@ const branchStudents = studentDatas.branchStudents;
 const branches = studentDatas.branches;
 const students = studentDatas.students;
 
-const studentNameFinder = (studentId) =>students.find(student => student.id === studentId).name
+const studentNameFinder = (studentId) => students.find(student => student.id === studentId).name
   const branchNameFinder =(branchId) => branches.find(branch=> branch.id === branchId).name
 
 const branchStudentMapper = (branchStudent)  =>

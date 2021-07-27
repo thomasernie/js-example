@@ -22,21 +22,23 @@ const Input = {
 
     const studentNameFinder = (studentId) =>
  { 
-     const student =  students.find(student => student.id === studentId)
-     return student.name;
+    
+    const student =  students.find(student => student.id === studentId)
+       return student.name;
  };
- const studentNameFinder = (studentId) =>students.find(student => student.id === studentId).name;
+  
+    const branch = 
 
 const branchStudentMapper = (branchStudent)  =>
 { 
     return {
-        id:branchStudent.id,
-        branchId:branchStudent.branchId,
-        studentId: branchStudent.studentId,
-        branchName: 'branhName',
-        studentName: studentNameFinder(branchStudent.studentId)
-    }
-};
+        id:value.id,
+         branchId:value.branchId,
+         branchName:branchDatas.name,
+         studentId:value.studentId,
+         studentName:studentDatas.name,
+     };
+ })
 
 const branchStudentMap = branchStudentMapper({ id: 1, branchId: 1, studentId: 1 });
 
