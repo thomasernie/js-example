@@ -28,9 +28,9 @@ const branches=Input.branches;
 const students=Input.students;
 //console.log("branchStudents",branchStudents);
 //console.log("branches",branches);
-const branchName=(branchId) => branches.find(obj => obj.id ===branchId ).name
-const studentName=(studId)=>students.find(obj=>obj.id === studId).name
-const output=(branchStudent)=> {
+const branchName=(branchId) => branches.find(branchObj => branchObj.id ===branchId ).name
+const studentName=(studId)=>students.find(studentObj=>studentObj.id === studId).name
+const mappedBranchStudentName=(branchStudent)=> {
     return{
         id:branchStudent.id,
         branchId:branchStudent.branchId,
@@ -42,5 +42,5 @@ const output=(branchStudent)=> {
     
 }
 
-const frist=branchStudents.map(output)
-console.log("frist",frist);
+const output=branchStudents.map(mappedBranchStudentName)
+console.log("output",output);
