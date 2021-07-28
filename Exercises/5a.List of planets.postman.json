@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "9ae9afcc-ebb9-4b4e-af08-bfb9f4735469",
+		"name": "List of planets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List of Planets ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "search",
+						"value": "planets",
+						"type": "text"
+					}
+				],
+				"url": "https://swapi.dev/api/planets/"
+			},
+			"response": []
+		},
+		{
+			"name": "Search people search luke",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://swapi.dev/api/people/?search=luke",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "luke"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

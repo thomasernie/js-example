@@ -11,7 +11,7 @@ const port = 3000
 // port number - its a number/address of every application which helps to communicate via internet
 // "port = 3000" is the server port address
 
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
 // app.get is request method - '/' is the route(a URL path/pattern) 
 // with this method we are giving response
 res.send('Hello FR8!')
