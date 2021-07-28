@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "0bd48f35-3589-48e2-a7f7-2149be648fac",
+		"name": "save packages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search luke",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://swapi.dev/api/people/?search=luke",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "luke"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

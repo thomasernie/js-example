@@ -39,7 +39,7 @@ const mappedBranchStudentName=(branchStudent)=> {
         studentname:studentName(branchStudent.studentId)
 
     }
-    
+
 }
 
 const output=branchStudents.map(mappedBranchStudentName)
