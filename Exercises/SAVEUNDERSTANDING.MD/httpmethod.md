@@ -34,5 +34,14 @@ The req.params
             app.get('/:id', function (req, res) 
             console.log(req.params['id']);
                 res.send();
+post/post body=>
+       
+       //  URL to ‘POST’, and under the ‘Body’ tab choose the ‘raw’ radio button and then ‘JSON (application/json)’ from the drop down.
+       //now type in the JSON you want to send along with the POST request.
+
+Request body=>  //some specific information that needs to be sent with the request.
+
+       //The Body tab in Postman allows you to specify the data you need to send with a request. You can send various different types of body data to suit your API.
+
 
 
