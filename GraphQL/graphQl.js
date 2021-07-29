@@ -6,7 +6,6 @@ const port = 7000;
 const client = new GraphQLClient('https://dcore.fr8.in/v1/graphql')
 
 app.get('/city', async (req, res) => {
-
     const query = gql`
         query city($search: String, $limit: Int) {
         city(where: {_and: [{name: {_ilike: $search}}, {is_connected_city: {_eq: true}}]}, limit: $limit) {
@@ -21,10 +20,9 @@ app.get('/city', async (req, res) => {
     }
 
     const cityDetails = async () => {
-        return await client.request(query, variables).then(result => result).catch((error) => console.log(error))
+        return await client.request(query, variables).
+        then(result => result).catch((error) => console.log(error))
     };
     res.send(await cityDetails())
-
 })
-
 app.listen(port, () => console.log(` Listening ${port}`));
