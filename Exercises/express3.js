@@ -14,8 +14,7 @@ const port = 7665;
 
        const param = req.body;
         console.log(param.name);
-        
-        res.send(`Hello${param.name}`);
+        res.send(`{Output:Hello${param.name}}`);
     });
         app.listen(port,() =>{
         console.log(`app listening at https://localhost:${port}`);
