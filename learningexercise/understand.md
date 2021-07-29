@@ -15,10 +15,22 @@ get/post/put API:
           # put request is idempotent.it means we can call the request multiple times.
 
   Get query params:
-                # query paramater is a part of url.to access the quesry paramater
+                # query paramater is a part of url.to access the query paramater
                 # we need to type req.query
                 # http//localhost:5000/user/?key=value  
-                # to send multiple paramaters=http//localhost:5000/user/?key=value&key=value.
+                # to send multiple paramaters=http//localhost:5000/user/?       key=value&key=value.
                 # in post man we can add key value in the params.
 
 
+post postbody:
+                # We use this method when additional information needs to be  sent to the server inside the body of the request.
+                #when we submit a POST request, we expect to have some change on the server, such as updating, removing or inserting.
+
+ Request Body/response Body:
+               we are the client and we need to send data to the API.
+               where response body is the data send by Api to the client.
+               response body contain information of output we request
+
+Header:
+           # headers are like extra sourse of informsation for each API call we make.
+           # headers are key value pair in string forrmat seperated by colon
