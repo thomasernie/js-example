@@ -19,10 +19,16 @@ app.get('/city', async (req, res) => {
         limit: 4
     }
 
+<<<<<<< HEAD
     const cityDetails = async () => {
         return await client.request(query, variables).
         then(result => result).catch((error) => console.log(error))
     };
     res.send(await cityDetails())
+=======
+  
+    res.send(await client.request(query, variables));
+
+>>>>>>> ef66b0557632cc02bac565e2c27a9a4e44dd9691
 })
 app.listen(port, () => console.log(` Listening ${port}`));
