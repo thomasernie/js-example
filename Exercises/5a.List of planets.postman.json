@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "9ae9afcc-ebb9-4b4e-af08-bfb9f4735469",
 		"name": "List of planets",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"base url": "https://swapi.dev/api/"
 	},
 	"item": [
 		{

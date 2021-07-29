@@ -47,12 +47,14 @@
    npm install express --no-save      -> To install Express temporarily and not add it to the dependencies list.
    npx kill-port 8080                 -> to kill the process currently using a port on localhost
    npm install cookie-parser --save   -> it is node.js middleware for handling JSON,Raw,text and url form of data.
-   npm install cookie-parser --save   -> 
-   npm install multer --save          ->
    middleware                         -> it is a software which acts as a bridge between a Operating system and a network/web applications.
 
 
 5) How to use old express?
-=> To use older express versions, install the application generator as a global npm package and then launch it:
-   npm install -g express-generator => 
-   express
+=> To use older express versions, use the command npm install express -d (-d because the package of the installed items will be saved in dev dependencies)
+   To install a specific version of express, use the command npm install express@2.x.x - 2.x.x is the specified version to be installed.
+
+
+6) How to maintain external dependencies?
+=> External dependencies are the updations made to the current dependencies. 
+   when we download or update to the latest versions of express or any other packages, the updated dependencies will also add on to the current dependencies.
