@@ -4,11 +4,15 @@ const app=express()
 bodyParser = require('body-parser')
 app.use(bodyParser.json());
 
-port=3000
+port=3001
+
+app.get('/',(req,res)=>{
+    res.send('nothing')
+})
 
 app.post('/student',(req,res)=>{
     const parameter=req.body
-    
+    console.log(parameter)
 
 
 const branchDetails=parameter.branchStudent
@@ -32,4 +36,5 @@ console.log(branchMapper)
 res.send(branchMapper)
 
 })
-app.listen(3000)
+app.listen(3001)
+
