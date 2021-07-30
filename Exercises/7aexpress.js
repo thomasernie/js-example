@@ -2,21 +2,21 @@ const express = require('express')
 const app = express()
 bodyParser = require('body-parser');
 app.use(bodyParser.json());
-const port = 3000
+const port = 3013
 
-// To get Hello Jay
-app.get('/hello', function(req,res) {
-    const queryParameter = req.query;
-    console.log(queryParameter.name);
-    res.send(`hello${queryParameter.name}`);
-});
+// // To get Hello Jay
+// app.get('/hello', function(req,res) {
+//     const queryParameter = req.query;
+//     console.log(queryParameter.name);
+//     res.send(`hello${queryParameter.name}`);
+// });
 
-// To post Hello Jay
-app.post('/hello',function (req,res){
-   const postParameter = req.body
-   console.log(postParameter)
-   res.send(`{Output:hello${postParameter.name}}`)
- });
+// // To post Hello Jay
+// app.post('/hello',function (req,res){
+//    const postParameter = req.body
+//    console.log(postParameter)
+//    res.send(`{Output:hello${postParameter.name}}`)
+//  });
 
 // To post Student
 function studentInfo(studentDatas){

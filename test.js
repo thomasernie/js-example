@@ -4,7 +4,7 @@ const app = express()
 bodyParser = require('body-parser');
 app.use(bodyParser.json());
 const fetch = require("node-fetch");
-const port= 2201;
+const port= 9843;
 app.use(express.static('public'));
 app.use(express.json({limit:'1mb'}));
 const data =  {
@@ -46,5 +46,5 @@ app.get('/student', async(request,response) =>{
     response.send(abcd)
 })
 
-app.listen(7656, () =>{ console.log('listening at 3002')
+app.listen(port, () =>{ console.log('listening at 3002')
 });
