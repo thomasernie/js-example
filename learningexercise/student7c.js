@@ -1,10 +1,10 @@
     const express = require('express');//express is an module used to for web framewok
     const app = express(); //after importing express we assign a name to it
-    bodyParser = require('body-parser');//body parser is an module it is used to enter req body and get response body
+    bodyParser = require('body-parser');//body parser is an module or a middleware module .it is used to enter req body and get response body
     app.use(bodyParser.json());//we use this to get the file in json file
      const port = 9843;//we assing a port to our server
    
-   function studentDetails(para){//put the data in a function studentdetails
+   function studentDetails(para){//put the data in a function called studentdetails
        const branchStudents=para.branchStudents;
        const branches=para.branches;
        const students=para.students;

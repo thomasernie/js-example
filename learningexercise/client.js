@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const    app  = express();
+const fetch = require('fetch');
 const cityDatas = {                                  // varaible declaration (studentData is an object)
     city:[                                 // array of elements
         { id: 1, branchId:1, connectedCityId: 1, name: "Chennai" },
