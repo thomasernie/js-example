@@ -1,12 +1,15 @@
 const express = require('express');
-const response  = require("express");
+// const response  = require("express");
 const app = express()
+
 bodyParser = require('body-parser');
 app.use(bodyParser.json());
+
 const fetch = require("node-fetch");
-const port= 2201;
-app.use(express.static('public'));
-app.use(express.json({limit:'1mb'}));
+const port= 4000;
+
+// app.use(express.static('public'));
+// app.use(express.json({limit:'1mb'}));
 const data =  {
     branchStudent: [
         { id: 1, branchId: 1, studentId: 1 },
@@ -25,26 +28,24 @@ const data =  {
     ]
 }
 const options = {
-    method: 'POST',
+    method: "POST",
+    body: JSON.stringify(data),
     headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-};
-
-app.get('/student', async(request,response) =>{
+        "Content-Type": "application/json"
+    }
+}
+app.get('/hello', async(request,response) =>{
     
-    const abcd=await fetch('http://localhost:3013/student',options)
+    const apiCall = await fetch('http://localhost:3001/student',options) 
     .then (function(response){
-        response.json()
+    return response.json()
     })
 
     .catch(function(error){
-        console.log('requested error',error)
+        console.log('UNEXPECTED ERROR',error)
     })
-    console.log(abcd)
-    response.send(abcd)
+    console.log(apiCall);
+    response.send(apiCall)
 })
 
-app.listen(7656, () =>{ console.log('listening at 3002')
-});
+app.listen(port) 
