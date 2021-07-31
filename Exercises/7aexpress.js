@@ -20,9 +20,9 @@ const port = 3001
 
 // To post Student
 function studentInfo(studentDatas){
-const branchStudents = studentDatas.branchStudents;
-    const branches = studentDatas.branches;
-    const students = studentDatas.students;
+const branchStudents = studentDatas.branchStudent;
+    const branches = studentDatas.branch;
+    const students = studentDatas.student;
     
     const branchNameFinder = (branchId) => branches.find(branch => branch.id === branchId).name;
     
@@ -43,9 +43,10 @@ const branchStudents = studentDatas.branchStudents;
     
 };
 
-app.post('/student',function (req,res){
+app.post('/student', function (req,res){
     const input = req.body
-    res.send(studentInfo(input))
+    console.log(input)
+    res.send(  studentInfo(input))
     //console.log('{branchStudentMap${res.send}}')
 });
 app.listen(port, () => {
