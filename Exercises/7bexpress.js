@@ -44,21 +44,27 @@ const data =  {
 const options = {           // represents a request for information
     method: "POST", // 
     body: JSON.stringify(data),  //JSON.stringify() method converts a JavaScript object or value to a JSON string
+    body: data,  // is this line required try and let me know
+    
     headers: {
         "Content-Type": "application/json"  //is used to determine what media type the middleware will parse
     }
 }
 
-app.get('/hello', async(request,response) =>{  //async()- It makes sure that a promise is returned 
-    const apiCall = await fetch('http://localhost:3001/student',options)  // fetch the data from the url - await - pauses untill a promise is settled
-    .then (function(response){       //then() function returns a new promise/response
-        return response.json();   // res.json() function sends a JSON response. (sends the converted parameter to json )
+// since synce is used make it with out then
+app.get('/hello', async(request,response) =>{  //async()- It makes sure that a promise is returned  
+    const returnData = await fetch('http://localhost:3001/student',options);  // fetch the data from the url - await - pauses untill a promise is settled
+    // .then (function(response){       //then() function returns a new promise/response
+    //     return response.json();   // res.json() function sends a JSON response. (sends the converted parameter to json )
     
-    }).catch(function(error){       // catch() method returns a Promise and deals with rejected cases only
-        console.log('UNEXPECTED ERROR',error)
-    })
-    response.send(apiCall)
+    // }).catch(function(error){       // catch() method returns a Promise and deals with rejected cases only
+    //     console.log('UNEXPECTED ERROR',error)
+    // })
+    response.send(returnData.json());
 })
+
+
+
 
 app.listen(port)
  
