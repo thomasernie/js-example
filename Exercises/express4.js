@@ -11,7 +11,7 @@ app.use(bodyParser.json());//JSON.parse() method takes a string as input and tra
 
 //app.use(express.json());
 
-const port = 7667;
+const port = 3000;
 
 function studentCollections(studentDetails){
  
@@ -38,13 +38,14 @@ const branchStudentMaps = branchStudents.map(branchStudentMapper);
 return branchStudentMaps;
 
 };
+app.get('/',(req,res) => res.send('nothing'))
 
   app.post('/student',function(req,res) {
   
     const output = req.body;
-    //console.log(req.body);
-
-    res.send(studentCollections(output))
+    console.log(req.body);
+    res.send(output);
+    // res.send(studentCollections(output))
 
 });
    app.listen(port,() => {

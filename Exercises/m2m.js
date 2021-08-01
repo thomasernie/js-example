@@ -1,13 +1,14 @@
 const express = require('express');
+const app = express()
+bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
-const app = express();
+const fetch = require('node-fetch');
 
-//const fetch('https://reqres.in/api/users")
-const fetch = (require('node-fetch'));
-const port = 4000;
+const port = 5000;
 
-    const StudentDetails = {    // varaible declaration (StudentDetails is an object)
-        branchStudents:[        // array of elements
+    const Input = {    
+        branchStudents:[        
             { id: 1, branchId: 1, studentId: 1 },
             { id: 2, branchId: 2, studentId: 2 },
             { id: 3, branchId: 2, studentId: 1 },
@@ -22,24 +23,34 @@ const port = 4000;
             { id: 2, name: "Sanjay" },
             { id: 3, name: "Rajesh" }
         ]
-    };
-     
+    }
+
     const options = {
         method: 'POST',
-        Headers: {'content-Type':'application/json'},
-        body: JSON.stringyfy(Output),//stringyfy()method converts js object or value to json string
-    }
-     //To start a request,call the special function fetch()
+        
+        body: JSON.stringify(Input),
 
-       app.get('/',async function(req,res){ //async function funcName(url){
-
-       const response = await fetch('https://reqres.in/api/users')// const response = await fetch(url);
-      
-       return await response.json(); // 
+        headers: {'Content-Type':'application/json'}
     
-    }
+ };
+    
+        //stringyfy()method converts js object or value to json string
+        //To start a request,call the special function fetch()
 
-//.then(data => console.log(data))
+app.get('/students', async(req,res) => 
+       { 
+          const myResponse = await fetch('http://localhost:3000/student',options)
+         
+          .then(function(res){
+           return res.json();
 
-//.catch(error => console.log('ERROR'))
-   // console.log(fetch('https://reqres.in/api/users'))
+          }).catch(function(error){
+            console.log('Error:',error)});
+
+            console.log(myResponse);
+
+            res.send(myResponse);
+        });
+    
+
+    app.listen(port);

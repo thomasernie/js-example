@@ -77,7 +77,7 @@ npm install -g yarn
 
         app = express()   => The app object conventionaly denotes the express application;
                      which is created it by calling the top-level express() function.
-express(update): npm install express@latest -g => It will update the excisting express gloally;
+express(update): npm install express@latest -g => It will update the excisting express globally;
 
 6. How to use old express?
 
