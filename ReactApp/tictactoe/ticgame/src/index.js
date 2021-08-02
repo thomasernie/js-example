@@ -6,120 +6,84 @@ import {useState}   from 'react';
 import reportWebVitals from './reportWebVitals';
 
 
-
-
-function Square(props){
+function Square({value,onClick}){
     return (
         <button className = "square" onClick = {() => 
-          props.onClick()
+          onClick()
         }>
-            {props.value}
+            {value}
         </button>
     )
 }
 
-function Board(props) {
 
-      const renderSquare = function(i) {
-        return < Square value={props.squares[i]} 
-        onClick = {() => props.onClick(i)}
-        />; 
-    }
-
-    
-
-    return (
-        <div>
+function Board({squares,onClick}) {
+  return (
         <div className="board-row">
-            {renderSquare(0)}
-            {renderSquare(1)}
-            {renderSquare(2)}
-        </div>
-        <div className="board-row">
-            {renderSquare(3)}
-            {renderSquare(4)}
-            {renderSquare(5)}
-        </div>
-        <div className="board-row">
-            {renderSquare(6)}
-            {renderSquare(7)}
-            {renderSquare(8)}
-        </div>
-        </div>
-    );
+            {squares.map((square,i) => (
+            <Square  key ={i} value = {square} onClick = {() => onClick(i)}/>
+            ))}
+        </div>)
 }
 
 function Game(){
-  let [history,setHistory] = useState([{squares : Array(9).fill(null)}]);
-  let [xIsNext,setX] = useState(true);
-  let [stepNum,setStep] = useState(0);
-  
+  const [history,setHistory] = useState([Array(9).fill(null)]); 
+  const [stepNumber,setStepNumber] = useState(0);
+  const [xIsNext,setXisNext] = useState(true);
+  const winner = calculateWinner(history[stepNumber]);
+
+
   const handleClick = (i) => {
-    
-  let histry = history.slice(0,stepNum + 1);
-  const current = histry[histry.length - 1];
-  const squares = current.squares.slice();
-      const square = squares.slice();
-      if(calculateWinner(square) || square[i]){
-        return;
-      }
+    const timeInhistory = history.slice(0,stepNumber + 1);
+    const  current = timeInhistory[stepNumber];
+    const squares = [...current]
+      // const boardCopy = [...board];
+      if(winner || squares[i]) return;
+      squares[i]  = xIsNext ? 'X' : 'O';
+      setHistory([...timeInhistory,squares]);
+      setStepNumber(timeInhistory.length);
+      setXisNext(!xIsNext);
+  }
 
-      squares[i] = xIsNext ? 'X' : 'O';
-      setHistory(history = history.concat([{
-        squares: squares
-      }]));
-      setX(xIsNext = !xIsNext);
+  const jumpTo = (step) => {
+    setStepNumber(step)
+    setXisNext(step % 2 === 0)
+  }
 
-    }
-  
-  const jumpTo = (step) => {  
-    setStep({   
-              stepNumber: step,
-              xIsNext: (step % 2) === 0,    }
-            );  
-      }
-
-  let histry = history;
-  const current = histry[stepNum];
-  const winner = calculateWinner(current.squares)
-
-  const moves = history.map((step,move) => {
-    const desc = move ? 'Go to move #' + move : 'Go to game start';
-    return (
-      <li>
-        <button onClick = {() => jumpTo(move)}>{desc}</button>
-      </li>
-    )
-  })
-
-  let status;
-    if (winner) {
-      status = 'Winner: ' + winner;
-    } else {
-      status = 'Next player: ' + (xIsNext ? 'X' : 'O');
-    }
-
-    return(
-<div className="game">
-        <div className="game-board">
-            <Board 
-            squares= {current.squares}
-            onClick = {(i) => handleClick(i)} />
+  const renderMoves = () => (
+    history.map((_step,move) =>{ 
+      const destination = move ? `Go to move ${move}` : `Go to start`;
+      return (
+        <div className = "history">
+        <li key = {move}>
+          <button className= "start" onClick = {() => jumpTo(move)}>{destination}</button>
+        </li>
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
+      )})
+  )
+      return(
+        <div className = "container">
+        <>
+        <div className="">
+            <Board squares = {history[stepNumber]}
+            onClick = {(i) => handleClick(i)} /></div>
+            <div className = "status">
+              <p>{winner ? 'Winner:' + " " + winner : 'Next Player' +"  "+ (xIsNext ? 'X' : 'O')}</p>
+              {renderMoves()} 
+              <div> </div>
+            </div>
+        </>
       </div>
     )
 }
 
 
 
-ReactDOM.render(
+ReactDOM.render( 
   <Game/>,
   document.getElementById('root')
 );
+
 
 function calculateWinner(squares) {
   const lines = [

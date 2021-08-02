@@ -1,6 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: 14px;
   margin: 20px;
+  font-family: monospace;
 }
 
 ol,
@@ -8,10 +15,24 @@ ul {
   padding-left: 30px;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+.container {
+  background-color: #334756;
+  /* transform: translate(-50%,-50%); */
+  /* top: 50%; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.board-row {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
 .status {
@@ -19,22 +40,24 @@ ul {
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
+  background: #ffeac9;
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
+  height: 54px;
+  width: 54px;
+  color: #d83a56;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.square:focus {
-  outline: none;
+.square:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  color: #262a53;
 }
 
 .kbd-navigation .square:focus {
@@ -48,4 +71,38 @@ ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.status {
+  width: 100px;
+  margin: 20px auto;
+  color: white;
+  margin-top: 15px;
+  /* display: flex; */
+  font-size: 18px;
+  font-weight: 700;
+}
+.start {
+  border: none;
+  border-radius: 3px;
+  padding: 5px 9px;
+  background-color: #d83a56;
+  color: white;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.start:hover {
+  background-color: #c8d4b8;
+  color: #515e63;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+li {
+  list-style: none;
+}
+.history {
+  display: flex;
+  flex-direction: column;
 }
