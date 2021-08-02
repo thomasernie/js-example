@@ -24,7 +24,7 @@ const studentNameFinder = (studentId) => students.find(student => student.id ===
   const branchNameFinder=(branchId) => branches.find(branch=> branch.id === branchId).name
 
 const branchStudentMapper = (branchStudent)  =>
-{ 
+ { 
     return {
         id:branchStudent.id,
         branchId:branchStudent.branchId,
@@ -32,20 +32,20 @@ const branchStudentMapper = (branchStudent)  =>
         studentId:branchStudent.studentId,
         studentName: studentNameFinder(branchStudent.studentId)
     }
-};
+ };
 
 const branchStudentMaps = branchStudents.map(branchStudentMapper);
 return branchStudentMaps;
 
 };
-app.get('/',(req,res) => res.send('nothing'))
+//app.get('/',(req,res) => res.send('nothing'))
 
   app.post('/student',function(req,res) {
   
     const output = req.body;
     console.log(req.body);
-    res.send(output);
-    // res.send(studentCollections(output))
+    //res.send(output);
+    res.send(studentCollections(output))
 
 });
    app.listen(port,() => {
