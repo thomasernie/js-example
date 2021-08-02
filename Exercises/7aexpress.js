@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 bodyParser = require('body-parser');
 app.use(bodyParser.json());
-const port = 3001
+const port = 3002
 
 // // To get Hello Jay
 // app.get('/hello', function(req,res) {
@@ -20,9 +20,9 @@ const port = 3001
 
 // To post Student
 function studentInfo(studentDatas){
-const branchStudents = studentDatas.branchStudent;
-    const branches = studentDatas.branch;
-    const students = studentDatas.student;
+const branchStudents = studentDatas.branchStudents;
+    const branches = studentDatas.branches;
+    const students = studentDatas.students;
     
     const branchNameFinder = (branchId) => branches.find(branch => branch.id === branchId).name;
     
@@ -38,6 +38,7 @@ const branchStudents = studentDatas.branchStudent;
             studentName: studentNameFinder(branchStudents.studentId)
         }
     }
+    
     const branchStudentMaps = branchStudents.map(branchStudentMapper);
     return branchStudentMaps;
     

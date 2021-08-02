@@ -51,15 +51,21 @@ const options = {           // represents a request for information
 }
 
 // since synce is used make it with out then
-app.get('/hello', async  (request,response) =>{  //async()- It makes sure that a promise is returned  
-    const returnData = await fetch('http://localhost:3002/student',options)  // fetch the data from the url - await - pauses untill a promise is settled
-    // .then (function(response){       //then() function returns a new promise/response
-    return response.json()  // res.json() function sends a JSON response. (sends the converted parameter to json )
-    //console.log(returnData.json())
-    // }).catch(function(error){       // catch() method returns a Promise and deals with rejected cases only
-    //     console.log('UNEXPECTED ERROR',error)
-    // })
-    //response.send(returnData.json());
-})
-app.listen(port)
- 
+// app.get('/hello', async function (request,response) {  //async()- It makes sure that a promise is returned  
+//     const returnData = await fetch('http://localhost:3002/student',options);  // fetch the data from the url - await - pauses untill a promise is settled
+//     return returnData();
+//     // .then (function(response){       //then() function returns a new promise/response
+//       // res.json() function sends a JSON response. (sends the converted parameter to json )
+//     //console.log(response.json());
+//     // }).catch(function(error){       // catch() method returns a Promise and deals with rejected cases only
+//     //     console.log('UNEXPECTED ERROR',error)
+//     // })
+//     //response.send(retunData);
+// })
+// app.listen(port)
+ async function main(){
+     const res = await fetch('http://localhost:3002/student')
+    const text = await res.json();
+    console.log(text);
+    }
+    main();
