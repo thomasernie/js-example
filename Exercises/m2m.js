@@ -34,8 +34,8 @@ const port = 5000;
     
  };
     
-        //stringyfy()method converts js object or value to json string
-        //To start a request,call the special function fetch()
+//stringyfy()method converts js object or value to json string
+ //To start a request,call the special function fetch()
 
 app.get('/students', async(req,res) => 
        { 
