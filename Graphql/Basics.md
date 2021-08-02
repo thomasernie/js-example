@@ -18,7 +18,7 @@
 PRINCIPLES OF REST API
 - Stateless
 - Client-Server Architecture
-- Cacheable
+- Cacheable    
 - Unified interface
 - Layered system
 
