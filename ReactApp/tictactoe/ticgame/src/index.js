@@ -63,16 +63,13 @@ function Game(){
   )
       return(
         <div className = "container">
-        <>
-        <div className="">
             <Board squares = {history[stepNumber]}
-            onClick = {(i) => handleClick(i)} /></div>
+            onClick = {(i) => handleClick(i)} />
             <div className = "status">
               <p>{winner ? 'Winner:' + " " + winner : 'Next Player' +"  "+ (xIsNext ? 'X' : 'O')}</p>
               {renderMoves()} 
               <div> </div>
             </div>
-        </>
       </div>
     )
 }
