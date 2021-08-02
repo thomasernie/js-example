@@ -25,7 +25,7 @@ const port = 5000;
         ]
     }
 
-    const options = {
+    const options = {  
         method: 'POST',
         
         body: JSON.stringify(Input),
@@ -35,22 +35,18 @@ const port = 5000;
  };
     
 //stringyfy()method converts js object or value to json string
- //To start a request,call the special function fetch()
+        //To start a request,call the special function fetch()
 
 app.get('/students', async(req,res) => 
-       { 
+      
+       { //
           const myResponse = await fetch('http://localhost:3000/student',options)
-         
-          .then(function(res){
-           return res.json();
+        
+          const studentDetails = await myResponse.json();
 
-          }).catch(function(error){
-            console.log('Error:',error)});
-
-            console.log(myResponse);
-
-            res.send(myResponse);
-        });
+          res.send(studentDetails);
+        //   .then(function(res){
+        //    return res.json();
     
-
+       });
     app.listen(port);
