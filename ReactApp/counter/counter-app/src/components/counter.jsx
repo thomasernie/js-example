@@ -8,15 +8,19 @@ function Counter(){
 
 function Count(props){
     let [count,setCount] = useState(0);
+
     function minus(){
         setCount(count - 1) ;
     }
+
     function plus(){
         setCount(count + 1) ;
     }
+
     function reset(){
         setCount(count = 0)
     }
+    
     return (
         <div>
             <div className = {styles.header}>
