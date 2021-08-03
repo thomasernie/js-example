@@ -31,7 +31,10 @@ PRINCIPLES OF REST API
    * REST has a URI for accessing resources by means of a request-response pattern.
 
 
+4) Why choose Graphql over Rest API
+=> In "Rest API", when we create a frontend and launch a homepage, 
+consider a login page, when we want to enter or use the buttons in the homepage(rest client)the API call will take place for more than the expected time in the rest server (will hit the server many times to get the required information). There is several network hop in Rest. also there is a chance to get unwanted data from the server
+for ex - in the given data info={id:2, name:"mohan"}, if we need only names from the info, the rest api will take the whole array to the rest and ask them to take what they need.
 
-4) RESTful Web Services
-=> * They are the services that follow REST architecture. 
-   * 
+whereas in "Graphql", it is simple where the client will tell the server whatever he needs using graphql(only the required attributes) and hence the graphql packs the required data and sends to the client.
+in graphql, it is "what we see is what we get". A task/getting data is completed only at one request. whatever data we want we get back in a single request.
