@@ -44,9 +44,12 @@ app.get('/students', async(req,res) =>
         
           const studentDetails = await myResponse.json();
 
-          res.send(studentDetails);
-        //   .then(function(res){
-        //    return res.json();
+          res.send(studentDetails);  
+
+        //   .catch(function(error){
+        //      console.log(error);
     
        });
-    app.listen(port);
+         app.listen(port, () => {
+         console.log(`app listening at http://localhost:${port}`);
+     })
