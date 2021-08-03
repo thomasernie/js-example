@@ -25,8 +25,8 @@ const gather =(gath)=>{     //we put this output in a function and assing a name
     return output
     }
 app.post('/api',(request,response)=>{ // post methoud is used to add data or update to the server 
-    const body= request.body; //the data sent from client is stored in the request.body
-    console.log(gather(body)); //we console.log the executed output
+    const body= request.body;         //the data sent from client is stored in the request.body
+    console.log(gather(body));        //we console.log the executed output
 
-   response.send(gather(body)) //sending the output as the response to the client
+   response.send(gather(body))        //sending the output as the response to the client
 })  

@@ -1,6 +1,6 @@
  const express = require('express');                  //express is a module used for web framework 
  const app = express()                                //we assign a name to it
- const fetch = require('node-fetch')                  //node fetch module is used to retrive text from the server 
+ const fetch = require('node-fetch')                  //node fetch module is used to fetch the url 
  bodyParser = require('body-parser');                 //body parser is an module or a middleware module .it is used to enter req body and get response body
     app.use(bodyParser.json());                       //we change it to json format
     const cityDatas = {                               // varaible declaration (cityDatas is an object)
@@ -19,7 +19,7 @@
     }
     const options ={                                  //we assign options 
         method: "POST",                               //post request
-        body: JSON.stringify(cityDatas),              //changing the request body data as json file
+        body: JSON.stringify(cityDatas),              //we convert the city data to string json 
         headers: {
         "Content-Type": "application/json"
       }}
