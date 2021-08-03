@@ -28,7 +28,10 @@ GraphQl
 
    GraphQl vs Rest API:
     
-        1. Endpoints: => In the REST APIs, the URL we send over the network, or the server denotes a single resource. When we need to fetch data   from multiple resources in REST APIs, we need to request multiple endpoints, leading to multiple round trips for getting all the data we have requested for.
-
-                       => But, in GraphQL, you don’t have such kinds of multiple endpoints. You can fetch data from multiple resources in just one request from the server and with a single endpoint. GraphQL saves you from multiple round trips over the network to get data from multiple resources, and save you time.
-        
+       Rest Api => Architectural design style
+       
+                => Multiple endpoints(GET/users,POST/    products)
+               
+       Graphql  =>  Query language
+       
+              =>  Single Endpoint(POST/graphql)       
