@@ -1,4 +1,3 @@
-//const { response } = require('express');
 const express = require('express');
 const app = express()
 bodyParser = require('body-parser');
@@ -43,21 +42,14 @@ const port = 5000;
       
         const myResponse = await fetch('http://localhost:3000/student',options)
 
-        const studentDetails = await myResponse.json();
+        //waits until the request completes...
+        const studentDetails = await myResponse.json();//response.json()- returns a promise resolved to a JSON object
 
         res.send(studentDetails);  
 
-    //       .then(response => response.json())
+     })
 
-    //       .then( =>console.log(myResponse));
-    //     //    return response.json()
-        
-    //        .catch(function(error){
-    //         console.log('ERROR',error);
-    
-    //    });
-    })    
-           app.listen(port, () => {
+           app.listen(port, () => {2
 
              console.log(`app listening at http://localhost:${port}`);
      

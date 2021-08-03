@@ -1,4 +1,4 @@
-//const { response } = require('express');
+const { response } = require('express');
 const express = require('express');
 const app = express()
 bodyParser = require('body-parser');
@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 
 const fetch = require('node-fetch');
 
-const port = 6000;
+const port = 9843;
 
     const Input = {    
         branchStudents:[        
@@ -26,36 +26,31 @@ const port = 6000;
         ]
     }
 
-    const options = {  
-      method: 'POST',
-        
-      body: JSON.stringify(Input),
+const options = {
+    method: 'POST',
+    body: JSON.stringify(Input),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}
+//app.get('/',(req,res) => res.send('nothing'))
 
-      headers: {'Content-Type':'application/json'}
-    
-     };
-    
-//stringyfy()method converts js object or value to json string
-        //To start a request,call the special function fetch()
 
-app.get('/students', async(req,res) => {
-      
-          const myResponse = await fetch('http://localhost:3000/student',options)
+app.get('/students',function(req,res){
 
-          //const studentDetails = await myResponse.json();
+const output = fetch('http://localhost:3000/student', options)
+   
+  .then(res => res.json())
+  
+    .then(response => {
+        res.send(response)
+    })
+    .catch(error => `ERROR:`)
+}) 
+    app.listen(port, () => {
 
-          //res.send(studentDetails);  
+    console.log(`app listening at http://localhost:${port}`);
 
-          .then (function(myResponse){
-           return myResponse.json()
-          })
-           .catch(function(error){
-            console.log('ERROR',error);
-    
-       });
-    })    
-           app.listen(port, () => {
+})
 
-             console.log(`app listening at http://localhost:${port}`);
-     
-       })
+  
