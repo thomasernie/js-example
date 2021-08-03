@@ -41,7 +41,7 @@ app.get('/students',function(req,res){
 const output = fetch('http://localhost:3000/student', options)
    
   .then(res => res.json())
-  
+
     .then(response => {
         res.send(response)
     })
