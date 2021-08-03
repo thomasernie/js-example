@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 bodyParser = require('body-parser');
 app.use(bodyParser.json());
-const port = 3002
+const port = 3000
 
 // // To get Hello Jay
 // app.get('/hello', function(req,res) {
@@ -20,7 +20,7 @@ const port = 3002
 
 // To post Student
 function studentInfo(studentDatas){
-const branchStudents = studentDatas.branchStudents;
+const branchStudents = studentDatas.branchStudent;
     const branches = studentDatas.branches;
     const students = studentDatas.students;
     
@@ -37,18 +37,17 @@ const branchStudents = studentDatas.branchStudents;
             studentId: branchStudents.studentId,
             studentName: studentNameFinder(branchStudents.studentId)
         }
-    }
+    };
     
     const branchStudentMaps = branchStudents.map(branchStudentMapper);
     return branchStudentMaps;
     
 };
 
-app.post('/student', function (req,res){
+app.post('/student', function(req,res){
     const input = req.body
-    console.log(input)
-    res.send(  studentInfo(input))
-    //console.log('{branchStudentMap${res.send}}')
+    //console.log(studentInfo(input))
+    res.send(studentInfo(input))
 });
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`)

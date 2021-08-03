@@ -18,7 +18,7 @@ const fetch = require('node-fetch');
 //import node-fetch module using require function and fetch is local variable name
 // node-fetch package allows us to retrieve text from the web server, a whole web page, or data from using REST API. 
 
-const port= 4000;
+const port= 4001;
 // port number - its a number/address of every application which helps to communicate via internet
 // "port = 3000" is the server port address
 
@@ -51,21 +51,17 @@ const options = {           // represents a request for information
 }
 
 // since synce is used make it with out then
-// app.get('/hello', async function (request,response) {  //async()- It makes sure that a promise is returned  
-//     const returnData = await fetch('http://localhost:3002/student',options);  // fetch the data from the url - await - pauses untill a promise is settled
-//     return returnData();
-//     // .then (function(response){       //then() function returns a new promise/response
-//       // res.json() function sends a JSON response. (sends the converted parameter to json )
-//     //console.log(response.json());
-//     // }).catch(function(error){       // catch() method returns a Promise and deals with rejected cases only
-//     //     console.log('UNEXPECTED ERROR',error)
-//     // })
-//     //response.send(retunData);
-// })
-// app.listen(port)
- async function main(){
-     const res = await fetch('http://localhost:3002/student')
-    const text = await res.json();
-    console.log(text);
-    }
-    main();
+app.get('/abcd', async function(req,res) {  //async()- It makes sure that a promise is returned  
+    const returnData = await fetch('http://localhost:3000/student',options) // fetch the data from the url - await - pauses untill a promise is settled
+    .then (function(response){       //then() function returns a new promise/response
+    //return returnData.json();  // res.json() function sends a JSON response. (sends the converted parameter to json )
+    //console.log(response.json())
+    })
+     .catch(function(error){       // catch() method returns a Promise and deals with rejected cases only
+         console.log('UNEXPECTED ERROR',error)
+    })
+    console.log(returnData);
+    res.send(returnData)
+})
+app.listen(port)
+ 
