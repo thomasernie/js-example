@@ -36,7 +36,6 @@ const options = {
     }
 }
 app.get('/hello',async(req,res) =>{
-    
     const returnData = await fetch('http://localhost:3000/student',options) 
     const output =  await returnData.json();
     console.log(output);
