@@ -1,67 +1,60 @@
-const express = require('express')
-
+const { response } = require('express');
+const express = require('express');
 const app = express()
-
-bodyParser = require('body-parser')
-
+bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const port = 6000;
+const fetch = require('node-fetch');
 
-function cityCollection(cityDetails)
-{
+const port = 9843;
 
-     const city = cityDetails.city;
-     const branches = cityDetails.branches;
+    const Input = {    
+        branchStudents:[        
+            { id: 1, branchId: 1, studentId: 1 },
+            { id: 2, branchId: 2, studentId: 2 },
+            { id: 3, branchId: 2, studentId: 1 },
+            { id: 4, branchId: 1, studentId: 3 }
+        ],
+        branches: [
+            { id: 1, name: "CSE" },
+            { id: 2, name: "IT" }
+        ],
+        students: [
+            { id: 1, name: "Jay" },
+            { id: 2, name: "Sanjay" },
+            { id: 3, name: "Rajesh" }
+        ]
+    }
 
-     const branchesFinder =(branchId) => branches.find(branch => branch.id === branchId).name
-     const cityFinder =(connectedId) =>city.find(city => city.id === connectedId).name
-
-     const connectedCityBranchMapper = (cities)  =>
-    { 
-    return {
-        id:cities.id,
-        branchId:cities.branchId,
-        branch:branchesFinder(cities.branchId),
-        connectedCityId:cities.connectedCityId,
-        connectedCity:cityFinder(cities.connectedCityId),
-        name:cities.name
-
-   }
-};
-
-const connectedCityBranchMaps = city.map(connectedCityBranchMapper);
+const options = {
+    method: 'POST',
+    body: JSON.stringify(Input),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}
+//app.get('/',(req,res) => res.send('nothing'))
 
 
-console.log(connectedCityBranchMaps);
+app.get('/students',function(req,res){
 
-};
-app.post('/hello',function(req,res) {
-  
-    const Input = req.body;
-    console.log(req.body);
-    //res.send(output);
-    res.send(cityCollection(Input))
-
-});
-   app.listen(port,() => {
-           console.log(`app listening at http://localhost:${port}`);
+const output = fetch('http://localhost:3000/student', options)
    
- })
+    .then(res => res.json())
 
+    .then(response => {
+        res.send(response)
+    })
+   // .catch(error => `ERROR:`)
+    .catch(err => {
+        console.error('Error:',err)
+    })
 
+}) 
+    app.listen(port, () => {
 
-// const cityDatas = {                                  // varaible declaration (studentData is an object)
-//     city:[                                 // array of elements
-//         { id: 1, branchId:1, connectedCityId: 1, name: "Chennai" },
-//         { id: 2,branchId:1, connectedCityId: 1, name: "K.K.Nagar" },
-//         { id: 3,branchId:1, connectedCityId: 3, name: "Sreperumbudur" },
-//         { id: 4,branchId:2, connectedCityId: 4, name: "Coimbatore" },
-//         { id: 5,branchId:2, connectedCityId: 4, name: "Palladam" },
-//         { id: 6,branchId:2, connectedCityId: 4, name: "Ramandhapuram" }
-//     ],
-//     branches: [
-//         { id: 1, name: "Chennai-HO" },
-//         { id: 2, name: "Coimbatore-Branch" }
-//     ]
-// };
+    console.log(`app listening at http://localhost:${port}`);
+
+})
+
+  

@@ -38,7 +38,6 @@ const branchStudentMaps = branchStudents.map(branchStudentMapper);
 return branchStudentMaps;
 
 };
-app.get('/',(req,res) => res.send('nothing'))
 
   app.post('/student',function(req,res) {
   

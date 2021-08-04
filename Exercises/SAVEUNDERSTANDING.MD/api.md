@@ -34,4 +34,46 @@ GraphQl
                
        Graphql  =>  Query language
        
-              =>  Single Endpoint(POST/graphql)       
+                =>  Single Endpoint(POST/graphql)       
+
+Data Fetching
+This is one major scenario in terms of accessing an API endpoint to get the data. So in the REST, we may have to hit multiple endpoints. Like if consider the Example1 given below in which we have student details and we want to fetch the address of a particular student. Then, in this case, we could be needed to hit this API /student/id to fetch the initial student data. And, then to get the list of assignments done by the student we are likely to hit another API like /student/id/assignments shown in Example2. 
+
+Example1:
+
+{
+“student”: {
+“id”: “e4fg33d”,
+“name”: “Harry”,
+“age”: “15”,
+“email”: “harry15@gmail.com”
+}
+}
+
+Example2:
+
+{
+“assignments”: [{
+“id”: “1”,
+“name”: “Assignment1”
+},{
+“id”: “2”,
+“name”: “Assignment2”
+}]
+}
+
+On the other hand, with the help of GraphQL, we just simply need to send a single request to access the GraphQL server that includes concrete requirements.  Then the server responds with the help of sending JSON as per the query requirements shown the Example below.
+Example:
+
+query {
+Student(id: “e4fg33d”) {
+name
+age
+email
+assignments {
+name
+}
+}
+}
+
+And, with the help of single query by leveraging the capability of GraphQL we will be able to get all the data for which we need to hit 2 API endpoints using REST rather.
