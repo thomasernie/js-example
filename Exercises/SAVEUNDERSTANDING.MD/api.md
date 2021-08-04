@@ -1,12 +1,6 @@
 API? (Application Programming Interface)
      => API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other.
      => Each time you use an app like Facebook, send an instant message, or check the weather on your phone, you’re using an API.
- 
-    HTTP API?( Hypertext Transfer Protocol)
-
-     => A web API is a protocol that describes how your clients can access resources and what methods work with your architecture.
-     => An HTTP API is an API that uses Hypertext Transfer Protocol as the communication protocol between the two systems. HTTP APIs expose endpoints as API gateways for HTTP requests to have access to a server.
-       =>For example, you use an HTTP API every time you set a Zoom meeting in your Google calendar. The API defines how Zoom can communicate directly with Google’s servers to embed a Zoom meeting into the event rather than having to copy and paste the meeting invitation into a field.
     
     REST Api?
           => REST API stands for Representational State Transfer and is an architectural pattern for creating web services.
@@ -16,21 +10,18 @@ API? (Application Programming Interface)
           =>A Request is sent from client to server in the form of web url as http GET,POST,PUT or DELETE
 
 
-GraphQl  
+     GraphQl  
 
       => GraphQL is a new API standard invented and developed by Facebook. It is an open-source server-side technology, now maintained by a large community of companies and individuals of all over the world.
       => It is also an execution engine that works as a data query language and used to fetch declarative data.
-     
-      What is GraphQL?
-        
-        => GraphQL is an application layer server-side technology which is developed by Facebook for executing queries with existing data. GraphQL can optimize RESTful API calls. It gives a declarative way of fetching and updating your data. 
-        => GraphQL helps you to load data from server to client. It enables programmers to choose the types of requests they like to make.
+      => GraphQL is an application layer server-side technology which is developed by Facebook for executing queries with existing data. GraphQL can optimize RESTful API calls. It gives a declarative way of fetching and updating your data. 
+      => GraphQL helps you to load data from server to client. It enables programmers to choose the types of requests they like to make.
 
    GraphQl vs Rest API:
     
        Rest Api => Architectural design style
        
-                => Multiple endpoints(GET/users,POST/    products)
+                => Multiple endpoints(GET/users,POST/products)
                
        Graphql  =>  Query language
        
@@ -77,3 +68,48 @@ name
 }
 
 And, with the help of single query by leveraging the capability of GraphQL we will be able to get all the data for which we need to hit 2 API endpoints using REST rather.
+
+
+1).Define the Schema
+
+The GraphQL schema is used to define the kind of objects which can be fetched from service, and the fields they contain. GraphQL Schema Definition Language is used to define GraphQL schema.
+
+Add the following code in server.js file to define the schema:
+
+(Eg):
+// Adding Type Definitions  
+const typeDefinition = `  
+   type Query  {  
+      hello: String  
+   }  
+Here, hello is the attribute of the query that returns a string value.
+
+2).Create a Resolver
+
+The resolver is used to process the request to the hello attribute of the query. The structure of the resolver function and the schema function must be the same. Add the following code in the server.js file.
+
+
+(Eg):
+// Adding resolver  
+const  resolverObject = {  
+   Query : {  
+      hello: () => 'Hello World! Welcome to JavaTpoint...'  
+   }  
+}  
+  => Use a pre-defined function makeExecutableSchema() to bind the schema and resolver. This function is pre-defined in the graphql-tools module.
+
+  => Add the following code in the server.js file to bind the schema and resolver.
+
+     const {makeExecutableSchema} = require('graphql-tools')  
+     const schema = makeExecutableSchema({typeDefs:typeDefinition, resolvers:resolverObject})  
+
+3). Define Routes to Retrieve Data from ReactJS/GraphiQL Application
+
+ Add the following code in the server.js file to define a route to retrieve the data.
+
+    const {graphqlExpress, graphiqlExpress} = require('apollo-server-express')  
+   //create routes for graphql and graphiql  
+   app.use('/graphql',graphqlExpress({schema}))     
+   app.use('/graphiql',graphiqlExpress({endpointURL:'/graphql'})) 
+
+  => Here, the graphqlExpress function is used to register the route http://localhost:4000/graphql and the graphqliExpress function is used to register the route http://localhost:4000/graphiql
