@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 const fetch=require('node-fetch')
 
-const port=3000
+const port=3002
 
 
 const data={
@@ -37,14 +37,20 @@ app.get('/hello',async(req,res)=>{
           "Content-Type": "application/json"}
         
         })
-        .then(function(response) { 
-            return response.json()          })
+
+        const output=await fetchingDatas.json()
+
+        // .then(function(response) { 
+        //     return response.json()          })
+
+        // .then(function(response) { 
+        //     res.send(response)          })
           
-          .catch(function(error) { 
-            console.log('Requestfailed', error) 
-          })
-          console.log(fetchingDatas);
-          res.send(fetchingDatas)
+        //   .catch(function(error) { 
+        //     console.log('Requestfailed', error) 
+        //   })
+          console.log(output);
+          res.send(output)
 })
 
 app.listen(port)
