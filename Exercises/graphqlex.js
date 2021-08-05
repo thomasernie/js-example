@@ -1,4 +1,5 @@
 const express = require('express');
+// graphql-request -fetch client//this library for server to server graphql communication
 const {GraphQLClient,gql} = require('graphql-request')
 const app = express();
 const port = 4000;
@@ -39,10 +40,3 @@ const query = gql`
 
 
 
-// app.use('/graphql',graphqlHttp({
-//    schema: schema,
-//    rootValue: root,
-//    graphiql: true 
-// }));  
-// app.listen(4000);  
-// console.log('Running a GraphQL API server at http://localhost:4000/graphql'); 
