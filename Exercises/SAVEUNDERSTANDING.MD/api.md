@@ -102,7 +102,7 @@ const  resolverObject = {
 
      const {makeExecutableSchema} = require('graphql-tools')  
      const schema = makeExecutableSchema({typeDefs:typeDefinition, resolvers:resolverObject})  
-
+ 
 3). Define Routes to Retrieve Data from ReactJS/GraphiQL Application
 
  Add the following code in the server.js file to define a route to retrieve the data.
