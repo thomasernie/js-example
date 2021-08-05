@@ -25,10 +25,37 @@ PRINCIPLES OF REST API
 
 3) Graphql
 => * GraphQL is a query language for APIs
+   * Open source
+   * Sever side technology which is used in optimising restful api calls
    * It was created by Facebook 
    * REST determines how the API looks like.
    * They provide means of accessing resources present at server required for the client via the web browser by means of request headers, request body, response body, status codes, etc
    * REST has a URI for accessing resources by means of a request-response pattern.
+   * GraphQL structures data in the form of a graph with its powerful query syntax for traversing, retrieving, and modifying data.
+
+   Advantages:
+   - Ask for what you want, and get it
+     Send a GraphQL query to your API and get exactly what you need.
+     Unlike Restful services, these applications can restrict data that should be fetched from the server.
+
+   - Get many resources in a single request
+     GraphQL APIs fetch all the data your application need in a single request.
+    
+   - Describe what’s possible with a type system
+     GraphQL is strongly typed and the queries are based on fields and their associated data types.
+     If there is type mismatch in a GraphQL query, server applications return clear and helpful error messages.
+
+   Components - 1) Server side Components
+                2) Client Side Components
+
+   Server side components - 
+   1) Schema - it is at the center of any GraphQL server implementation and describes the functionality available to the clients which connect to it.
+   2) Query - A GraphQL query is the client application request to retrieve data from database or legacy API's.
+   3) Resolver - they provide the instructions for turning a GraphQL operation into data. They resolve the query to data by defining resolver functions.
+
+
+
+   
 
 
 4) Why choose Graphql over Rest API

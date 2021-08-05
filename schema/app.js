@@ -1,11 +1,21 @@
-const express = require ('express');
-const graphqlHTTP =  require ('express-graphql');
-const schema = require ('./schema/schemas');
+
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const schema = require('./schemas');
+const mongoose = require('mongoose');
+
 const app = express();
-const port = 4000
+
+mongoose.connect('mongodb://demo:test123@ds149491.mlab.com:49491/testapp', { useNewUrlParser: true });
+mongoose.connection.once('open', () => {
+    console.log('connected to database');
+});
 
 app.use('/graphql', graphqlHTTP({
-     schema,
-     graphql:true 
+    schema,
+    graphiql: true,
 }));
-app.listen(port)
+
+app.listen(4000, () => {
+    console.log('Server running on port 4000')
+});
