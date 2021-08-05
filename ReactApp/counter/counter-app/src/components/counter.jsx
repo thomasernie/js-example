@@ -1,38 +1,40 @@
 import {useState} from 'react';
 import styles from '../appStyles.module.css'
 
-
-function Counter(){
-        return (<div><Count /></div>)
+const Button = (props) => {
+    let style;
+    if(props.value === "-"){
+        style = styles.decBtn;
+    }
+    if(props.value === "+"){
+        style = styles.decBtn;
+    }
+    if(props.value === "reset"){
+        style = styles.reset;
+    }
+    return <button  className = {style} onClick = {props.onClickFunction}>{props.value}</button>
 }
 
-function Count(props){
-    let [count,setCount] = useState(0);
+const Count = () => {
+    const initial = 0;
+    const [count,setCount] = useState(initial);
 
-    function minus(){
-        setCount(count - 1) ;
-    }
+    const  minus = () => setCount(prev => prev - 1);
 
-    function plus(){
-        setCount(count + 1) ;
-    }
+    const plus   = () => setCount(prev => prev + 1);
 
-    function reset(){
-        setCount(count = 0)
-    }
-    
-    return (
+    const reset  = () =>  setCount(initial)
+
+    return(
         <div>
             <div className = {styles.header}>
-                <div>
             <span className = {styles.count}>{count}</span>
-            <button className = {styles.incBtn} onClick = {minus}>-</button>
-            <button className = {styles.decBtn} onClick = {plus}>+</button>
-            <button className = {styles.reset}  onClick = {reset}>RESET</button>
-            </div>
-            </div>
-            </div>
+            <Button   value = "-"     onClickFunction = {minus}/>
+            <Button   value = "+"     onClickFunction = {plus}/>
+            <Button   value = "reset" onClickFunction = {reset}/>
+        </div>
+    </div>
     )
 }
 
-export default Counter;
+export default Count;
