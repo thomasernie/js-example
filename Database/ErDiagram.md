@@ -12,6 +12,7 @@ Table list{
 id int [pk]
 user_id int [ref: > user.id]
 title varchar
+disc varchar
 created_at timestamp
 deadline datetime
 completed boolean [default: false]
