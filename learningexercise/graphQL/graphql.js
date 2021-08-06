@@ -14,7 +14,7 @@ app.get('/city', async (request, response)=> {
       name
       is_connected_city
     }
-  }
+  } 
 `
 const searchingCity = `%${request.query.name}%`;
 const variables = {
@@ -22,6 +22,8 @@ const variables = {
   limit:5
 }
    const city = await graphQLClient.request(query,variables)
+  console.log(graphQLClient)                                                 //giving  the graphqlclient a url that we need response from that graphql server
+
     response.send(city)
 
 }) 
