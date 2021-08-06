@@ -33,7 +33,3 @@ Ref: "listCategory"."list_id" < "list"."id"
 Ref: "listCategory"."category_id" < "category"."id"
 
 <img src="output.png"/>
-
-<img src="output.png"
-     alt="HTML&CSS Exercises"
-     style="float: left; margin-right: 10px;" />
