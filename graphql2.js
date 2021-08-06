@@ -15,14 +15,13 @@ app.get('/city',async (req,res)=> {
       is_connected_city
     }
   }`
-const citySearch = `%${req.query.name}%`;
+const citySearch = `${req.query.name}%`;
   const variables= {
 
           // search:'%che%',limit:2
           search:citySearch,limit:2
           
-      }
-
+  }
       
 
   const finalDatas = await Client.request(querry,variables)
@@ -30,4 +29,4 @@ const citySearch = `%${req.query.name}%`;
 
 })
 
-app.listen(port)
+app.listen(port) 
