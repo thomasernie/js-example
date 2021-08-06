@@ -12,7 +12,6 @@ const Calc = () => {
         const {name,value} = event.target;
         setState({...state,[name]: value});
     }
-
     const {num1,num2,error} = state;
     const handleSelect = (event) => {
         const {value} = event.target;

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Nothing from './components/form'
+import Form from './components/form'
 ReactDOM.render(
-  <Nothing />,
+  <Form />,
   document.getElementById('root')
 );
 
