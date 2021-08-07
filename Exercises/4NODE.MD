@@ -6,7 +6,7 @@
    "npm init"                  -> to initailize a javascript or node js project.
    "npm scripts"               -> to display the commands used.
    "package.json"              -> it holds the important data about the particular project before publishing.
-   ".json"                     -> stores simple data structures and objects in JavaScript Object Notation (JSON) format
+   ".json"                     -> stores simple data structures and objects in JavaScript Object Notation (JSON) format and send it to server
    "package-lock.json"         -> default packages
    "npm install --production"  -> installing npm for production environment. 
    "npm install --development" -> installing npm for developing environment.
@@ -37,8 +37,24 @@
    "yarn remove"              -> removes a particular package installed.
 
 4) Express js? How to upgrade to new express js?
-=> Express is a web framework for Node.js.
-   
-   npm install express --save            -> Helps in installing express in node terminal as a package and saving it in the dependencies.
-   npm install express --no-save         -> temporarily installing and not saving in the dependencies/package.json
-   
+=> Express is a server side or back end web framework for Node.js - A framework acts like a library(pre-defined modules a program can use),   that provides a base for an application.
+   It responds to http requests.
+
+   It is used in designing and building web applications quickly and easily.
+   using express we can develop API
+   npm install -g express             -> install express framework globally
+   npm install express --save         -> install express in node_module directory and create a directory named express inside the node_module
+   npm install express --no-save      -> To install Express temporarily and not add it to the dependencies list.
+   npx kill-port 8080                 -> to kill the process currently using a port on localhost
+   npm install cookie-parser --save   -> it is node.js middleware for handling JSON,Raw,text and url form of data.
+   middleware                         -> it is a software which acts as a bridge between a Operating system and a network/web applications.
+
+
+5) How to use old express?
+=> To use older express versions, use the command npm install express -d (-d because the package of the installed items will be saved in dev dependencies)
+   To install a specific version of express, use the command npm install express@2.x.x - 2.x.x is the specified version to be installed.
+
+
+6) How to maintain external dependencies?
+=> External dependencies are the updations made to the current dependencies. 
+   when we download or update to the latest versions of express or any other packages, the updated dependencies will also add on to the current dependencies.
