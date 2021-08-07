@@ -16,9 +16,9 @@ app.get('/city', async (request, response)=> {
     }
   } 
 `
-const searchingCity = `%${request.query.name}%`;
+const searchingCity = `%${request.query.name}%`;   // this search based on the name we give in the query parameter  //used % % which it searches any words containing this form letters    
 const variables = {
-  search:searchingCity, // this search based on the name we give in the query parameter  //used % % which it searches any words containing this form letters    
+  search:searchingCity, 
   limit:5
 }
    const city = await graphQLClient.request(query,variables)
