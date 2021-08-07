@@ -42,4 +42,4 @@
     SELECT branchStudent.id,branchStudent.branch_id,branch.name,branchStudent.student_id,student.name
     FROM ((branchStudent
     INNER JOIN branch ON branch.id = branch_id)
-    INNER JOIN student ON student.id = student_id)
+    INNER JOIN student ON student.id = student_id)   
