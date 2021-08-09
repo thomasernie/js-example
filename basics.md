@@ -36,3 +36,16 @@ JOINS:
     * FULL JOIN:
 
           * it returns all records when there is a match in both tables
+
+
+DDL:
+
+  * DATA DEFINITION LANGUAGE
+  * It is used to create database structure
+  * commands are auto-committed so, the changes are saved in the database permanently
+  * it allows to store shared data
+DML:
+
+  * DATA MANIPULATION LANGUAGE
+  * commands are not auto commited and its not permanent
+  * it allows to modify and store the shared data
