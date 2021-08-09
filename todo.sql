@@ -71,7 +71,17 @@ insert into todo_datas (id,category_id,user_id,status_id,due_date,task)
 values (1,1,1,1,'2021-09-30','Need to achieve 800 orders')
 
 insert into todo_datas (id,category_id,user_id,status_id,due_date,task)
-values (2,2,2,2,'2021-09-30','Train 5 interns')
+values (2,2,2,1,'2021-09-30','Train 5 interns')
 
 insert into todo_datas (id,category_id,user_id,status_id,due_date,task)
-values (3,2,3,3,'2021-09-30','Get trained in devops')
+values (3,2,3,1,'2021-09-30','Get trained in devops')
+
+
+-- selecting datas
+
+SELECT todo_datas.id, users.user_name,todo_datas.task, category.category_name ,status.status_name,todo_datas.due_date
+FROM (((todo_datas
+INNER JOIN users ON todo_datas.user_id = users.id)
+INNER JOIN category ON todo_datas.category_id = category.id)
+INNER JOIN status ON todo_datas.status_id = status.id)
+
