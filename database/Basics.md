@@ -27,7 +27,20 @@ c) Normalization
 => 
 
 d) DDl? DML?
-=>
+=> SQL commands are divided into four subgroups;
+1) DDL
+   DDL is abbreviated as Data Definition Language
+   It deals with the database schemas and descriptions, basically of how the data should be stored in the database.
+* CREATE - to create a database and its objects like (table, index, views, store procedure, function, and triggers)
+* ALTER - alters the structure of the existing database
+* DROP - delete objects from the database
+* TRUNCATE - remove all records from a table, including all spaces allocated for the records are removed
+* COMMENT - add comments to the data dictionary
+* RENAME - rename an object
+
+2) DML - 
+3) DCL 
+4) TCL
 
 e) Joins
 => A JOIN is a clause that is used to combine rows from two or more tables, based on a related column between them.
