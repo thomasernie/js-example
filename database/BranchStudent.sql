@@ -10,8 +10,8 @@ CREATE TABLE student(
 );
 CREATE TABLE branchStudents(
     id int NOT NULL,
-    branchId int NOT NULL,
-    studentId int NOT NULL,
+    branchId int,
+    studentId int,
     branchName varchar,
     studentName varchar,
     PRIMARY KEY (id),
@@ -36,6 +36,9 @@ VALUES
 (2,2,2)
 (3,2,1)
 (4,1,3)
+(6,null,1)
+(7,1,null)
+(5,null,null)
 
 SELECT branchStudents.id,branchStudents.branchId,branch.branchName,
 branchStudents.studentId,student.studentName
