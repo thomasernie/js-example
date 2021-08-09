@@ -24,10 +24,40 @@ b) What is ACID property?
 
 
 c) Normalization
-=> 
+=> Way of organising data in database.
+   why normalization?
+   - to avoid redundancy : repeated data cannot be in one table with simiar content.
+   - to avoid Insertion,Deletion and Update anomalies 
+The database normalization process is divided into following the normal form:
+1) First Normal Form (1NF)
+   Each column or row should have only single value attribute.
+   The table should be atomic(an operation appears to occur at a single instant between its invocation and its response).
+
+2) Second Normal Form (2NF)
+   Table should be 1NF.
+   There should not be partial dependency.
+   Functional dependency - Each and every other column should be dependent on the the Primary key(unique key).
+   Partial Dependency - here, a nonprime attribute is functionally dependent on part of a candidate key(two primary key-data to be found with two other data). 
+
+3) Third Normal Form (3NF)
+   Table should be 2NF.
+   There should not be Transitive dependency.
+   For ex - 
+   Column C -> Depend on -> Column B
+   Column B -> Depend on -> Column A
+   So Column C -> Depend on -> Column A (where A is a Primary Key) 
+   so here, column C is indirectly dependent on column A via column B. This is called Transitive dependency.
+
+4) Boyce-Codd Normal Form (BCNF)
+   Table should be 3NF.
+   There should not be reverse dependency.
+   For every dependency B -> A, A is super key.(This condition should not exist)
+   
+5) Fourth Normal Form (4NF)
+6) Fifth Normal Form (5NF)
 
 d) DDl? DML?
-=> SQL commands are divided into four subgroups;
+=>
 1) DDL
    DDL is abbreviated as Data Definition Language
    It deals with the database schemas and descriptions, basically of how the data should be stored in the database.
@@ -38,9 +68,19 @@ d) DDl? DML?
 * COMMENT - add comments to the data dictionary
 * RENAME - rename an object
 
-2) DML - 
-3) DCL 
-4) TCL
+2) DML 
+   It is abbreviated as Data manipulation Language.
+   It deals with data manipulation and includes most common SQL statements such as SELECT, INSERT, UPDATE, DELETE, etc., and 
+   It is used to store, modify, retrieve, delete and update data in a database.
+* SELECT - retrieve data from a database
+* INSERT - insert data into a table
+* UPDATE - updates existing data within a table
+* DELETE - Delete all records from a database table
+* MERGE - UPSERT operation (insert or update)
+* CALL - call a PL/SQL or Java subprogram
+* EXPLAIN PLAN - interpretation of the data access path
+* LOCK TABLE - concurrency Control
+
 
 e) Joins
 => A JOIN is a clause that is used to combine rows from two or more tables, based on a related column between them.
