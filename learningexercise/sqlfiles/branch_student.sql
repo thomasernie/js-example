@@ -50,3 +50,5 @@ insert into branch_student values(4,1,3);
 select * from branch_student;
 
 -- delete from branch_student;
+select bs.id,bs.branch_id,b.name as branch_name ,bs.student_id,s.name as student_name from branch_student bs, branch b, student s 
+where bs.branch_id=b.id and bs.student_id=s.id;
