@@ -33,7 +33,7 @@
     
       SELECT * FROM branch_Student;
     
-    -- inner join//for join table
+    -- inner join//for join table//
 
     SELECT branch_Student.id,branch_Student.branch_id,branch.branch_name,branch_Student.student_id,student.student_name
     FROM ((branch_Student
