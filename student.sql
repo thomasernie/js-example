@@ -74,3 +74,11 @@ SELECT branch_Student.id,branch_Student.branch_Id,branch.name,branch_Student.stu
 FROM ((branch_Student
 INNER JOIN branch ON branch_Student.branch_Id=branch.id)
 inner join student on branch_Student.student_Id=student.id)
+
+
+-- adding null
+SELECT branch_Student.id,branch_Student.branch_Id,branch_Student.student_Id,student.name,branch.name as branchname
+FROM ((branch_Student
+left join branch ON branch_Student.branch_Id=branch.id)
+left join student on branch_Student.student_Id=student.id)
+
