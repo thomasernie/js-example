@@ -1,3 +1,4 @@
+
      CREATE TABLE branch(
      id int PRIMARY KEY,
      branch_name varchar(20)
@@ -33,11 +34,33 @@
     
       SELECT * FROM branch_Student;
     
-    -- inner join//for join table//
+    --inner join// Returns records that have matching values in both tables
 
     SELECT branch_Student.id,branch_Student.branch_id,branch.branch_name,branch_Student.student_id,student.student_name
-    FROM ((branch_Student
-    INNER JOIN branch ON branch.id = branch_id)
-    INNER JOIN student ON student.id = student_id)  
+    FROM branch_Student
+    INNER JOIN branch ON branch.id =branch_Student.branch_id
+    INNER JOIN student ON student.id = branch_Student.student_id
+    
+    --left join// Returns all records from the left table, and the matched records from the right table
+    
+  SELECT branch_Student.id,branch_Student.branch_id,branch.branch_name,branch_Student.student_id,student.student_name
+    FROM branch_Student
+    LEFT JOIN branch ON branch.id =branch_Student.branch_id
+    LEFT JOIN student ON student.id = branch_Student.student_id
+
+    -- right join // Returns all records from the right table, and the matched records from the left table
+
+ SELECT branch_Student.id,branch_Student.branch_id,branch.branch_name,branch_Student.student_id,student.student_name
+    FROM branch_Student
+    RIGHT JOIN branch ON branch.id =branch_Student.branch_id
+    RIGHT JOIN student ON student.id = branch_Student.student_id
+
+        --full join// Returns all records when there is a match in either left or right table
+
+    SELECT branch_Student.id,branch_Student.branch_id,branch.branch_name,branch_Student.student_id,student.student_name
+      FROM branch_Student
+      FULL OUTER JOIN branch ON branch.id =branch_Student.branch_id
+      FULL OUTER JOIN student ON student.id = branch_Student.student_id
+      ORDER BY branch_Student.id;
     
     
