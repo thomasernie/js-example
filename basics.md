@@ -49,3 +49,8 @@ DML:
   * DATA MANIPULATION LANGUAGE
   * commands are not auto commited and its not permanent
   * it allows to modify and store the shared data
+
+
+
+  table name not shoul be in plural
+inside the table there should be in only name
