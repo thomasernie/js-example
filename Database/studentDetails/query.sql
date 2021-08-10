@@ -1,3 +1,4 @@
+-- CREATING TABLE
 
 CREATE TABLE branches (
     ID int NOT NULL,
@@ -24,6 +25,7 @@ CREATE TABLE studentDetails (
     FOREIGN KEY (studentId) REFERENCEs students(ID) 
 );
 
+-- INSERTING DATAS
 
 INSERT INTO students
 SELECT 1,'NITHISH'
@@ -48,6 +50,9 @@ INSERT INTO branches
 SELECT 1,'IT'
 UNION ALL
 SELECT 2,'CSE'
+
+
+-- SELECTING DATAS
 
 SELECT studentdetails.ID,studentdetails.branchId,studentdetails.studentId,
         branches.name AS BranchName,students.name AS StudentName 
