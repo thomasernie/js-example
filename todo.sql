@@ -26,7 +26,7 @@ CREATE TABLE category (
    
 );
 
-CREATE TABLE users (
+CREATE TABLE user (
     id int,
     name varchar,
     primary key  (id)
@@ -49,11 +49,7 @@ values (3,'satish')
 insert into status (id,name)
 values (1,'in-progress')
 
-insert into status (id,name)
-values (2,'in-progress')
 
-insert into status (id,name)
-values (3,'in-progress')
 
 
 -- category
@@ -67,19 +63,19 @@ values (2,'IT')
 
 -- todo_datas
 
-insert into todo (id,category_id,user_id,status_id,due_date,task)
+insert into todo (id,category_id,user_id,status_id,due_date,description)
 values (1,1,1,1,'2021-09-30','Need to achieve 800 orders')
 
-insert into todo (id,category_id,user_id,status_id,due_date,task)
+insert into todo (id,category_id,user_id,status_id,due_date,description)
 values (2,2,2,1,'2021-09-30','Train 5 interns')
 
-insert into todo (id,category_id,user_id,status_id,due_date,task)
+insert into todo (id,category_id,user_id,status_id,due_date,description)
 values (3,2,3,1,'2021-09-30','Get trained in devops')
 
 
 -- selecting datas
 
-SELECT todo.id, users.name as user,todo.task, category.name as category ,status.name as status,todo.due_date
+SELECT todo.id, users.name as user,todo.description, category.name as category ,status.name as status,todo.due_date
 FROM (((todo
 INNER JOIN users ON todo.user_id = users.id)
 INNER JOIN category ON todo.category_id = category.id)
