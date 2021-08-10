@@ -89,6 +89,41 @@ operations in DML :
 
 
 
+INNER JOIN:
+        the inner join selects the records that have been matching vales of both the table.we can join three tables by keeping a parent table in from.
+
+        syntax:  SELECT column_name()
+                 FROM table 1
+                 INNER JOIN table 2 
+                 ON table1.columnname=table2.columnname;
+
+LEFT JOIN:
+         left joins returns all record from left table (table 1) and matching records from right table (table 2)
+
+         syntax: SELECT column_name(s)
+                 FROM table1
+                 LEFT JOIN table2
+                 ON table1.column_name= table2.column_name;
+
+
+RIGHT JOIN :
+           opposite as left join prints all the records of right table(table 2)and matching records od left table (table 1).
+           syntax: SELECT column_name()
+                 FROM table1
+                 RIGHT JOIN table2
+                 ON table1.column_name= table2.column_name;               
+
+OUTER JOIN :
+            full outer join gives both the output of table 1 and table 2 by giving where condition
+             
+            syntax: SELECT column_name(s)
+             FROM table1
+             FULL OUTER JOIN table2
+             ON table1.column_name = table2.column_name
+             WHERE condition;
+
+
+
 
 
 
