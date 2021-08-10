@@ -52,3 +52,9 @@ select * from branch_student;
 -- delete from branch_student;
 select bs.id,bs.branch_id,b.name as branch_name ,bs.student_id,s.name as student_name from branch_student bs, branch b, student s 
 where bs.branch_id=b.id and bs.student_id=s.id;
+
+
+SELECT branch_student.id,branch_id,branch.name as branch_name,student_id,student.name as student_name
+FROM branch_student
+inner join branch on branch_student.branch_id=branch.id
+inner join student on branch_student.student_id=student.id
