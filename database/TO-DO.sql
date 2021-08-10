@@ -1,68 +1,75 @@
-CREATE Table todo_list(    
-  task_id int,
-  task_performed varchar,
-  category varchar,
-  PRIMARY KEY (person_name)
-);
 
-CREATE Table performance(    
-  status_id int,
-  status varchar,
-  due_date date,
-  PRIMARY KEY (person_name)
-);
-CREATE TABLE freight(
+CREATE Table person(
+  id int NOT NULL,
+  name varchar,
+  PRIMARY KEY(id)
+)
+
+CREATE Table todo(    
+  id int,           
   person_id int,
-  person_name varchar,
-  task_id varchar,
-  status_id varchar,
-  PRIMARY KEY (person_id),
-  FOREIGN KEY (task_id) REFERENCES todo_list(task_id),
-  FOREIGN KEY (status_id) REFERENCES performance(status_id)
-)   
+  description varchar,
+  priority_id int,
+  category_id int,
+  status_id int,
+  due_date timestamp,
+  PRIMARY KEY (person_id)
+  FOREIGN KEY (priority_id) REFERENCES priority(id),
+  FOREIGN KEY (category_id) REFERENCES category(id),
+  FOREIGN KEY (status_id) REFERENCES status(id)
+)
+CREATE Table category(
+  id int,
+  name varchar,
+  PRIMARY KEY(id)
+)
+ 
+CREATE Table priority(
+  id int,
+  level varchar,
+  PRIMARY KEY(id)
+)
 
-INSERT INTO todo_list(person_name,task_performed,category)
-VALUES ('Vasanth','Need to achieve 800 orders','Operations')
-INSERT INTO todo_list(person_name,task_performed,category)
-VALUES ('Jay','Train 5 interns','IT')
-INSERT INTO todo_list(person_name,task_performed,category)
-VALUES ('Satish','Get trained in devops','IT')
+CREATE Table status(
+  id int,
+  name varchar,
+  PRIMARY KEY(id)
+)
 
-INSERT INTO performance(person_name,status,due_date)
-VALUES ('Vasanth','in-progress','sep 31st 21')
-INSERT INTO performance(person_name,status,due_date)
-VALUES ('Jay','in-progress','sep 31st 21')
-INSERT INTO performance(person_name,status,due_date)
-VALUES ('Satish','in-progress','sep 31st 21')
+INSERT INTO person(id,name) 
+VALUES
+(1,'VASANTH')
+(2,'JAY') 
+(3,'SATISH') 
 
-INSERT INTO freight(person_id,person_name,task_id,status_id)
-VALUES (1,'Vasanth',1,4)
-INSERT INTO freight(person_id,person_name,task_id,status_id)
-VALUES (2,'Jay',2,5)
-INSERT INTO freight(person_id,person_name,task_id,status_id)
-VALUES (3,'Satish',3,6)
+INSERT INTO category(id,name) 
+VALUES
+(1,'Operations')
+(2,'IT')
+-- (3,'IT')
 
-SELECT branch_Student.id,branch_Student.branch_id,branch.branch_name,
-branch_Student.student_id,student.student_name
-FROM branch_Student
-INNER JOIN branch ON branch.id=branch_Student.branch_id
-INNER JOIN student ON student.id=branch_Student.student_id
-ORDER BY branch_Student.id;
+INSERT INTO priority(id,level) 
+VALUES
+(1,'High')
+(2,'Medium')
+(3,'Low')
 
-SELECT freight.person_name,todo_list.task_performed,
-todo_list.category,performance.status,performance.due_date
-FROM freight
-FULL OUTER JOIN todo_list ON todo_list.task_id = freight.task_id
-FULL OUTER JOIN performance ON performance.status_id = freight.status_id
+INSERT INTO status(id,name) 
+VALUES
+(1,'Completed')
+(2,'In-progress')
+(3,'Not-Completed')
 
+INSERT INTO todo(id,person_id,description,due_date)
+VALUES
+(4,1,' Need to achieve 800 orders',30-09-2021)
+(5,2,'Train 5 interns','30-09-2021')
+(6,3,'Get trained in devops','30-09-2021')
 
-SELECT freight.person_name,todo_list.task_performed,
-todo_list.category,performance.status,performance.due_date
-FROM freight
-INNER JOIN todo_list ON todo_list.task_id = freight.task_id
-INNER JOIN performance ON performance.status_id = freight.status_id
-
-
-
-
+SELECT person.id,person.name,todo.description,category.name,
+priority.level,status.name
+FROM todo
+INNER JOIN category ON category.id = todo.category_id
+INNER JOIN priority ON priority.id = todo.priority_id
+INNER JOIN status ON status.id = todo.status_id
 
