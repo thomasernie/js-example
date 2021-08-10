@@ -96,3 +96,13 @@ What is Data => Data is a raw and unorganized fact.
          FROM table1
          FULL OUTER JOIN table2 ON table1.column_name = table2.column_name WHERE condition;                
 
+5) Normalization
+       Data Redudancy=> It is a condition that occurs when the same piece of data exists in multiple places in the database whereas data inconsistency is a condition that occurs when the same data exists in different formats in multiple tables.
+
+            => Normalization is the process of organizing the data in the database.
+            => It is used to minimize the redundancy from a relation or set of relations. It is also used to eliminate the undesirable characteristics like Insertion, Update and Deletion Anomalies.
+            => It divides the larger table into the smaller table and links them using relationship.
+
+            
+
+
