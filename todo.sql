@@ -3,7 +3,7 @@ CREATE TABLE todo (
     user_id int,
     status_id int,
     category_id int,
-    due_date timestamp,
+    due_date date,
     description varchar,
     primary key  (id),
     foreign key (user_id) references users(id),
