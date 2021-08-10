@@ -25,9 +25,17 @@ b) What is ACID property?
 
 c) Normalization
 => Way of organising data in database.
+   Every data in database has to be in normal form.
+   normalization came into existence because of the problems that occurred on data.
+   Data Anomalies -
+   * Insertion
+   * Updation
+   * Deletion
+Normalization divides the larger table into the smaller table and links them using relationship.
    why normalization?
    - to avoid redundancy : repeated data cannot be in one table with simiar content.
    - to avoid Insertion,Deletion and Update anomalies 
+
 The database normalization process is divided into following the normal form:
 1) First Normal Form (1NF)
    Each column or row should have only single value attribute.
@@ -37,7 +45,7 @@ The database normalization process is divided into following the normal form:
    Table should be 1NF.
    There should not be partial dependency.
    Functional dependency - Each and every other column should be dependent on the the Primary key(unique key).
-   Partial Dependency - here, a nonprime attribute is functionally dependent on part of a candidate key(two primary key-data to be found with two other data). 
+   Partial Dependency - here, a nonprime attribute is functionally dependent on part of a candidate key(two primary key-data to be found with two other data).
 
 3) Third Normal Form (3NF)
    Table should be 2NF.
@@ -49,12 +57,21 @@ The database normalization process is divided into following the normal form:
    so here, column C is indirectly dependent on column A via column B. This is called Transitive dependency.
 
 4) Boyce-Codd Normal Form (BCNF)
-   Table should be 3NF.
+   Table should be in 3NF.
    There should not be reverse dependency.
    For every dependency B -> A, A is super key.(This condition should not exist)
    
 5) Fourth Normal Form (4NF)
+   Table should be in Boyce codd normal form.
+   There must not be multivalued dependency.
+   For ex - if there two different columns are dependent on one other column.this is multivalued dependency.
+   For a dependency A → B, if for a single value of A, multiple values of B exists, then the relation will be a multi-valued dependency.
+
 6) Fifth Normal Form (5NF)
+   table should be in 4NF
+   Does not contains any join dependency and joining should be lossless.
+   5NF is satisfied when all the tables are broken into as many tables as possible in order to avoid redundancy.
+
 
 d) DDl? DML?
 =>
