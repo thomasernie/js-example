@@ -94,5 +94,5 @@ What is Data => Data is a raw and unorganized fact.
         iv) FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table 
         Syntax - SELECT column_name(s)
          FROM table1
-          FULL OUTER JOIN table2 ON table1.column_name = table2.column_name WHERE condition;                
+         FULL OUTER JOIN table2 ON table1.column_name = table2.column_name WHERE condition;                
 
