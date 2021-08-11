@@ -1,44 +1,69 @@
-CREATE TABLE logistics_Company(
-    user_id int PRIMARY KEY,
-    user_name varchar, 
-    task varchar,
-    status varchar
+CREATE TABLE owner(
+  id int PRIMARY KEY,
+  name varchar
+  );
+  
+  INSERT INTO owner(id,name)
+     VALUES(1,'vasanth'),(2,'Jay'),(3,'Satish');
+
+CREATE TABLE category(
+  id int PRIMARY KEY,
+  name varchar
   );
 
-  INSERT INTO logistics_Company(user_id,user_name,task,status)
-      VALUES (1,'Vasanth', 'Need to achieve 800 orders','in-progress'), 
-             (2,'Jay','Train 5 interns',' in-progress'),
-             (3,'Satish','Get trained in devops','in-progress');
+  INSERT INTO category(id,name)
+     VALUES(1,'operations'),(2,'IT');
 
-SELECT *FROM logistics_Company;
+  CREATE TABLE status(
+     id int PRIMARY KEY,
+     name varchar
+     );
 
-CREATE TABLE todo_Category(
-     user_id int PRIMARY KEY,
-     category_id int ,
-     category_name varchar,
-     due_date varchar,
-     FOREIGN KEY (category_id)REFERENCES logistics_Company(user_id)
-    ); 
+     INSERT INTO status(id,name)
+        VALUES(1,'completed'),(2,'in-progress'),(3,'not-completed');
+    
+    CREATE TABLE priority(
+    id int PRIMARY KEY,
+    name varchar
+    );
+    
+     INSERT INTO priority(id,name)
+        VALUES(1,'high'),(2,'medium'),(3,'low');
+    
+    select *from owner;
+    
+    select *from category;
+    
+    select *from status;
+    
+    select *from priority;
 
-INSERT INTO todo_Category(user_id,category_id,category_name,due_date)
-      VALUES (1,1,'operations','31/09/2021'), 
-             (2,2,'IT','31/09/2021'),
-             (3,3,'IT','31/09/2021');
- 
-  SELECT *FROM todo_Category;  
-  
- --full join// Returns all records when there is a match in either left or right table
- 
+CREATE TABLE todo(
+      id int PRIMARY KEY,
+      user_id int,
+      category_id int,
+      status_id int,
+      priority_id int,
+      description varchar,
+      due_Date date,
+      FOREIGN KEY (user_id) REFERENCES owner(id),
+      FOREIGN KEY (category_id) REFERENCES category(id),
+      FOREIGN KEY (status_id) REFERENCES status(id),
+      FOREIGN KEY (priority_id) REFERENCES priority(id)
+      );
 
- SELECT  logistics_Company.user_id, todo_Category.category_id, logistics_Company.user_name, logistics_Company.task,
-      todo_Category.category_name ,logistics_Company.status,todo_Category.due_date
-     FROM todo_Category
-     FULL OUTER JOIN logistics_Company ON todo_Category.category_id=logistics_Company.user_id
-     ORDER BY todo_Category.category_id;
+INSERT INTO todo(id,user_id,category_id,status_id,priority_id,description,due_date)
+        VALUES(1,1,1,1,1,'Need to achieve 800 orders','2021/09/30'),
+        (2,2,2,2,2,'Train 5 interns','2021/09/30'),
+        (3,3,2,3,3,'Get trained in devops','2021/09/30');
 
+     select *from todo;
 
-
-
-
-
-
+    
+    SELECT owner.name ,todo.description,category.name as category,status.name as status,todo.due_Date
+    FROM todo
+    FULL OUTER join owner on todo.user_id=owner.id
+    FULL OUTER join category on todo.category_id=category.id
+    FULL OUTER join status on todo.status_id=status.id
+    FULL OUTER join priority on todo.priority_id=priority.id
+    order by todo.id;

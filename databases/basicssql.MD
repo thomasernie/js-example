@@ -103,6 +103,8 @@ What is Data => Data is a raw and unorganized fact.
             => It is used to minimize the redundancy from a relation or set of relations. It is also used to eliminate the undesirable characteristics like Insertion, Update and Deletion Anomalies.
             => It divides the larger table into the smaller table and links them using relationship.
 
-            
 
+for todo
 
+//table name should not be in plural
+//table name should not be in generic
