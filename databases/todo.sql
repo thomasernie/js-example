@@ -60,6 +60,14 @@ INSERT INTO todo(id,user_id,category_id,status_id,priority_id,description,due_da
      select *from todo;
 
     
+
+      INSERT INTO status(id,name)
+        VALUES(4,'on-hold');
+
+          INSERT INTO owner(id,name)
+     VALUES(4,'kiruthika'),(5,'dhanalaksmi'),(6,'arjun');
+
+
     SELECT owner.name ,todo.description,category.name as category,status.name as status,todo.due_Date
     FROM todo
     FULL OUTER join owner on todo.user_id=owner.id
