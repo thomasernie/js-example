@@ -32,6 +32,29 @@ graphQL:
                 2. writing the data with mutations .create,update,delete existing data.
                 3. schema - (data structure enava irukanum nu define pandrom) for eg=user data inside ,frst name as string ,user name as string,active inactive status as boolean.
                 4. resolvers  -it is the controllers,
+                5. real time subscriptions (updates the data instantly)
+
+
+    Hasura GRaphQl engine :
+         # The Hasura GraphQL engine makes your data instantly accessible over   a  real-time GraphQL API, so you      can   build apps and APIs faster.
+        
+         # Hasura connects to databases, REST servers, GraphQL servers, and third party APIs to provide  realtime GraphQL API across all your data sources.
+        
+         # the operations which we do like bulid sql query,create controllers and resolvers etc, this hasura makes automatedly and fast 
+        
+         # hasura scans our database and based on the schema it automatically generates graphQL queries,mutations and realtime subscriptions.
+        
+         # we no need to write code for it.
+
+    how it works : 
+         #A GraphQL type definition for the table
+          query field --> WHERE, ORDER_BY, LIMIT and OFFSET arguments
+          subscription field --> WHERE, ORDER_BY, LIMIT and OFFSET arguments
+          to insert mutation field --> ON_CONFLICT argument that can insert bulkly
+          update mutation field --> WHERE argument that supports more updates
+          for delete mutation field --> WHERE argument that supports  deletes
+
+           when we track a table ,the Hasura GraphQL engine, it automatically generates the above 
 
 
 
