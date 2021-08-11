@@ -18,7 +18,7 @@ CREATE Table todo(
   FOREIGN KEY (priority_id) REFERENCES priority(id),
   FOREIGN KEY (category_id) REFERENCES category(id),
   FOREIGN KEY (status_id) REFERENCES status(id)
-)
+)    
 
 CREATE Table category(
   id int NOT NULL,
