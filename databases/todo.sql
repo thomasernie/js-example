@@ -1,18 +1,22 @@
-CREATE TABLE owner(
-  id int PRIMARY KEY,
-  name varchar
-  );
-  
-  INSERT INTO owner(id,name)
-     VALUES(1,'vasanth'),(2,'Jay'),(3,'Satish');
+  CREATE TABLE owner(
+    id int PRIMARY KEY,
+    name varchar
+    );
 
-CREATE TABLE category(
+    select * from owner;
+
+  INSERT INTO owner(id,name)
+     VALUES(1,'vasanth'),(2,'Jay'),(3,'Satish'),(4,'kiruthika'),(5,'dhanalakshmi'),(6,'vijay');
+
+ CREATE TABLE category(
   id int PRIMARY KEY,
   name varchar
   );
 
   INSERT INTO category(id,name)
-     VALUES(1,'operations'),(2,'IT');
+     VALUES(5,'operations'),(6,'IT'),(7,'finance');
+
+select * from category;
 
   CREATE TABLE status(
      id int PRIMARY KEY,
@@ -20,7 +24,9 @@ CREATE TABLE category(
      );
 
      INSERT INTO status(id,name)
-        VALUES(1,'completed'),(2,'in-progress'),(3,'not-completed');
+        VALUES(1,'completed'),(2,'in-progress'),(3,'not-completed'),(4,'on-hold');
+    
+    select * from status;
     
     CREATE TABLE priority(
     id int PRIMARY KEY,
@@ -28,57 +34,64 @@ CREATE TABLE category(
     );
     
      INSERT INTO priority(id,name)
-        VALUES(1,'high'),(2,'medium'),(3,'low');
+        VALUES(3,'high'),(1,'medium'),(2,'low');
     
-    select *from owner;
-    
-    select *from category;
-    
-    select *from status;
-    
-    select *from priority;
+    select * from priority;
 
 CREATE TABLE todo(
       id int PRIMARY KEY,
-      user_id int,
+      owner_id int,
       category_id int,
       status_id int,
       priority_id int,
       description varchar,
-      due_Date date,
-      FOREIGN KEY (user_id) REFERENCES owner(id),
+      due_date date,
+      FOREIGN KEY (owner_id) REFERENCES owner(id),
       FOREIGN KEY (category_id) REFERENCES category(id),
       FOREIGN KEY (status_id) REFERENCES status(id),
       FOREIGN KEY (priority_id) REFERENCES priority(id)
       );
 
-INSERT INTO todo(id,user_id,category_id,status_id,priority_id,description,due_date)
-        VALUES(1,1,1,1,1,'Need to achieve 800 orders','2021/09/30'),
-        (2,2,2,2,2,'Train 5 interns','2021/09/30'),
-        (3,3,2,3,3,'Get trained in devops','2021/09/30');
+INSERT INTO todo(id,owner_id,category_id,status_id,priority_id,description,due_date)
+        VALUES(1,1,5,1,3,'Need to achieve 800 orders','2021-09-28'),
+        (2,2,6,2,2,'Train 5 interns','2021-09-28'),
+        (3,3,6,3,1,'Get trained in devops','2021-09-28'),
+        (4,4,null,null,null,' Need to achieve all targets','2021-09-28');
 
-     select *from todo;
+select * from todo;
 
+
+-- SELECT owner.id,owner.name,category.name As category,todo.description,todo.due_date
+--     FROM todo
+--     INNER join owner on todo.owner_id=owner.id
+--     INNER join category on todo.category_id=category.id
+--     INNER join status on todo.status_id=status.id
+--     INNER join priority on todo.priority_id=priority.id
     
-
-      INSERT INTO status(id,name)
-        VALUES(4,'on-hold');
-
-          INSERT INTO owner(id,name)
-     VALUES(4,'kiruthika'),(5,'dhanalaksmi'),(6,'arjun');
-
-
-
- INSERT INTO todo(id,person_id,priority_id,category_id,status_id,description,due_date)
-VALUES
-(4,1,null,null,1,' Need to achieve all targets','2021-09-30')
-
-
-
-    SELECT owner.name ,todo.description,category.name as category,status.name as status,todo.due_Date
+    
+  SELECT owner.id,owner.name,category.name As category,todo.description,todo.due_date
     FROM todo
-    FULL OUTER join owner on todo.user_id=owner.id
-    FULL OUTER join category on todo.category_id=category.id
-    FULL OUTER join status on todo.status_id=status.id
-    FULL OUTER join priority on todo.priority_id=priority.id
-    order by todo.id;
+    LEFT join owner on todo.owner_id=owner.id
+    LEFT join category on todo.category_id=category.id
+    LEFT join status on todo.status_id=status.id
+    LEFT join priority on todo.priority_id=priority.id
+    
+    
+    -- SELECT  owner.id,owner.name,category.name As category,status.id as status,todo.description,todo.due_date
+    -- FROM todo
+    -- RIGHT join owner on todo.owner_id=owner.id
+    -- RIGHT join category on todo.category_id=category.id
+    -- RIGHT join status on todo.status_id=status.id
+    -- RIGHT join priority on todo.priority_id=priority.id
+    
+    -- SELECT owner.id,owner.name,category.name As category,status.id as status,todo.description,todo.due_date
+    -- FROM todo
+    -- FULL OUTER join owner on todo.owner_id=owner.id
+    -- FULL OUTER join category on todo.category_id=category.id
+    -- FULL OUTER join status on todo.status_id=status.id
+    -- FULL OUTER join priority on todo.priority_id=priority.id
+    
+    
+    
+    
+    
