@@ -108,3 +108,10 @@ for todo
 
 //table name should not be in plural
 //table name should not be in generic
+  
+
+
+
+
+  priority /high ,medium ,low
+  category//ops,finace
