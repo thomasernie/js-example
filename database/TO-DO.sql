@@ -72,7 +72,7 @@ VALUES
 (1,1,1,1,1,' Need to achieve 800 orders','2021-09-01'),
 (2,2,2,2,2,'Train 5 interns','2021-09-01'),
 (3,3,3,2,3,'Get trained in devops','2021-09-01'),
-(4,4,1,null,null,'Need to achieve all orders','2021-09-01'),
+(4,4,null,null,4,'Need to achieve all orders','2021-09-01'),
 (5,5,2,null,3,'Get trained','2021-09-01'),
 (6,6,null,2,null,'Learn React before August 30','2021-09-01');
 
