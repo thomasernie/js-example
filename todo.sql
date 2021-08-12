@@ -44,11 +44,21 @@ values (2,'jay')
 insert into users (id,name)
 values (3,'satish')
 
+insert into users (id,name)
+values (4,'nitish')
+
+
+
 -- status
 
 insert into status (id,name)
 values (1,'in-progress')
 
+insert into status (id,name)
+values (2,'null')
+
+insert into status (id,name)
+values (3,'null')
 
 
 
@@ -71,6 +81,13 @@ values (2,2,2,1,'2021-09-30','Train 5 interns')
 
 insert into todo (id,category_id,user_id,status_id,due_date,description)
 values (3,2,3,1,'2021-09-30','Get trained in devops')
+
+insert into todo (id,category_id,user_id,status_id,due_date,description)
+values (4,2,null,1,'2021-10-30','geting train in joins')
+
+insert into todo (id,category_id,user_id,status_id,due_date,description)
+values (5,2,null,null,'2021-10-30','geting train in joins')
+
 
 
 -- selecting datas

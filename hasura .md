@@ -1,36 +1,64 @@
-schema:
+creating todo tabe:
 
-  * structure and desing of data
-
-
-  querries:
-
-    * It generates a range of possible queries and operators that also work with relationships defined in your SQL schema.
-
-mutations:
-
-   * mutations are used to modify data on the server.
-
-Insert-adding values to the data.
-
-Upsert-adding values and updates values to database
-
-Update-updating values
-
-Delete-deleting values
+     * id 
+     * title
+     * created_at
+     * is_completed
+     * is_public
+     * user_id
 
 
-subscription:
+inserting coloumn:
+  mutation {
+  insert_todos_task(objects:[{id:1,title: "creating table", user_id: "1"}]) {
+    affected_rows
+  }
+}
 
-    * in query there is changes in database we could not not no that.In subscription there is changes it will automatically changes in our querry.
+query:
+
+query{
+    todo{
+       id
+       titile
+       created_at
+       is_-public
+       is_completed
+    }
+ }
+
+ subscription:
+
+    subscription{
+    todo{
+       id
+       titile
+       created_at
+       is_-public
+       is_completed
+    }
+ }
 
 
-ACTIONS:
-   * extend Hasura’s schema with custom business logic using custom queries and mutations
-
-schedule triggers:
-
-   * Scheduled triggers are used to execute custom business logic at specific points in time.
-
-
+ foreign key:
     
+   * in this todo table id is a primary key and user_id is a foreign key.
+   * in users table id is a primary key
+   * it reference  users_id  in users
+
+relationship:
+  we use foreign key to get relationship
+
+relationship querries:
+
+query {
+  todos {
+    id
+    title
+    user {
+      id
+      name
+    }
+  }
+}
+
