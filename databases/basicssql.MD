@@ -111,7 +111,28 @@ for todo
   
 
 
+ => view => virtual table // view always shows up_to-date data
+
+ => count() function => returns no.of (rows/ values) that  matches specified column
+
+ => group by => particular column has same values ,but in different rows,then it will arrange rows in a group
 
 
-  priority /high ,medium ,low
-  category//ops,finace
+ SQL functions:
+ Two categories->
+    Aggregate and Scalar Functions:
+     1. Aggregate function->
+
+       i) COUNT() // used to count the number of rows returned in a SELECT statement
+   
+    Syntax:
+      SELECT COUNT(column_name)
+       FROM table_name;
+
+       ii) AVG(): It returns average value after calculating from values in a numeric column.
+
+    Syntax:
+SELECT AVG(column_name) FROM table_name;  
+
+
+
