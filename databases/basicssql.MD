@@ -121,7 +121,7 @@ for todo
  SQL functions:
  Two categories->
     Aggregate and Scalar Functions:
-     1. Aggregate function->
+     1. Aggregate function // return a single value, calculated from values in a column.->
 
        i) COUNT() // used to count the number of rows returned in a SELECT statement
    
