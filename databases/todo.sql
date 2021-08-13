@@ -141,6 +141,29 @@ SELECT owner.id,owner.name,category.name As category,todo.description,todo.due_d
     --     (5,5,null,null,'Get trained in Hardware','2021-09-28');
  
 --  select * from todo;
+
+
+--/ view table => virtual table // view always shows up_to-date data
+
+CREATE VIEW user_task AS
+SELECT name
+FROM owner;
+
+select *from user_task;
+
+--/ count function => returns no.of (rows/ values) that  matches specified column
+
+select count (name)
+from owner
+
+--/ group by => particular column has same values ,but in different rows,then it will arrange rows in a group
+
+    SELECT name ,count(name)
+    FROM owner
+    GROUP BY name;
+
+
+
     
     
     
