@@ -200,9 +200,26 @@ vi) NOW() -> to return the current system date and time.
 
 vii)FORMAT() -> to format how a field must be displayed.
 
+CREATE
+OR REPLACE VIEW "public"."user_task_count" AS
+SELECT
+  person.name,
+  count(person.name) AS count
+FROM
+  person
+GROUP BY
+  person.name;
 
 
 
-
-
+AGGREGATE
+query{
+  person{
+    id
+    name
+  }
+  user_task_count_aggregate{
+    aggregate{count}
+  }
+}
 
