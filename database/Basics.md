@@ -70,8 +70,7 @@ The database normalization process is divided into following the normal form:
 6) Fifth Normal Form (5NF)
    table should be in 4NF
    Does not contains any join dependency and joining should be lossless.
-   5NF is satisfied when all the tables are broken into as many tables as possible in order to avoid redundancy.
-
+   
 
 d) DDl? DML?
 =>
@@ -128,4 +127,82 @@ FROM table1
 FULL OUTER JOIN table2
 ON table1.column_name = table2.column_name
 WHERE condition;
+
+f) VIEW in SQL
+=> 
+* Virtual table(can be seen as a table but does not contain any value) that  contains data(column names) from one or multiple tables. 
+* It does not hold any data and does not exist physically in the database.
+* We can create a view by selecting fields from one or more tables in a database
+* A View can either have all the rows of a table or specific rows based on certain condition.
+* Views can join and simplify multiple tables into a single virtual table. 
+
+g) Views over Query
+=> 
+* A query exists only when one executes it - not saved in server
+* View is a query saved in server ..
+* Views are usually virtual and do not occupy space in systems.
+*  helps to hide some of the columns in a table.
+*  it can draw data from multiple tables and execute it in single table.
+*  The table is an independent data object while views are usually depending on the table.
+
+h) SQL GROUP BY Statement
+=> 
+*  to arrange identical data into groups with the help of functions.
+* for example - if a particular column has same values in different rows then it will arrange these rows in a group.
+* Syntax : SELECT column1, function_name(column2)
+FROM table_name
+WHERE condition
+GROUP BY column1, column2
+ORDER BY column1, column2;
+
+function_name: Name of the function used for example, SUM() , AVG().
+table_name: Name of the table.
+condition: Condition used.
+
+i) SQL FUNCTIONS
+=> Functions are methods used to perform data operations.
+Two categories:
+--> Aggregate Functions
+--> Scalar Functions
+
+1) AGGREGATE FUNCTIONS - Mathematical Calculations
+* These functions -> perform calculations on a group of values and then return a single value
+Some of the functions are :
+i) SUM() -> used to return the sum of a group of values.
+
+ii) COUNT() -> return the no. of rows and columns based on a certain condition or without a condition.
+
+iii) AVG() -> calculate avg value of a numeric column.
+
+iv) MIN() -> returns minimum value of a column.
+
+v) MAX() -> returns maximum values of a column.
+
+vi) FIRST() -> return the first value of the column.
+
+vii) LAST() -> returns last value of a column.
+
+
+2) SCALAR FUNCTIONS
+* to return a single value from the given input value.
+functions :
+i) LCASE() -> to convert string column values to lowercase
+
+ii) UCASE() -> to convert a string column values to Uppercase.
+
+iii) LEN() -> Returns the length of the text values in the column.
+
+iv) MID() -> Extracts substrings in SQL from column values having String data type.
+
+v) ROUND() -> Rounds off a numeric value to the nearest integer.
+
+vi) NOW() -> to return the current system date and time.
+
+vii)FORMAT() -> to format how a field must be displayed.
+
+
+
+
+
+
 
