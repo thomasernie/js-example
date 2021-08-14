@@ -1,0 +1,19 @@
+ query{
+  task_count{
+   name
+   name_count
+ }
+ }
+
+query{
+  person(
+    where: {name: {_in: ["VASANTH","JAY","SATISH"]}}){
+    id 
+    name
+    todos_aggregate{
+      aggregate{
+        count
+      }
+    }
+  }
+}
