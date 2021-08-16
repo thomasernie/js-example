@@ -210,7 +210,13 @@ FROM
 GROUP BY
   person.name;
 
-
+count using view
+query{
+ task_count{
+  name
+  name_count
+}
+}
 
 AGGREGATE
 query{
@@ -221,5 +227,7 @@ query{
   user_task_count_aggregate{
     aggregate{count}
   }
-}
+
+
+
 

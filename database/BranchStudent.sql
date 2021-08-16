@@ -34,10 +34,10 @@ INSERT INTO branch_Student(id,branch_id,student_id)
 VALUES
 (1,1,1)
 (2,2,2)
- (3,2,1)
+(3,2,1)
 (4,1,3)
 (5,null,null)
- (6,null,1)
+(6,null,1)
 (7,1,null)
 
 
