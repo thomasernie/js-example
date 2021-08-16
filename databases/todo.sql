@@ -162,6 +162,15 @@ from owner
     FROM owner
     GROUP BY name;
 
+--/create or replace view 
+
+CREATE OR REPLACE VIEW "public"."online_users" AS 
+ SELECT "user".id,
+    "user".last_seen
+  FROM "user"
+WHERE ("user".last_seen >= (now() - '03:00:00'::interval));
+
+
 
 
     
