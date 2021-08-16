@@ -171,6 +171,20 @@ CREATE OR REPLACE VIEW "public"."online_users" AS
 WHERE ("user".last_seen >= (now() - '03:00:00'::interval));
 
 
+--aggregation //query
+query {
+  owner{
+    id
+    name
+    task_count_aggregate{
+      aggregate{
+      count
+    }
+  }
+  }
+  }
+
+
 
 
     
