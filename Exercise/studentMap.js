@@ -16,15 +16,15 @@ Input = {
     ]
 }
 
-const Result = Input.branchStudent.map((branchStudentMapper) => {
+const branchStudentMapper = (branchStudent) => {
 
     return {
-        id: branchStudentMapper.id,
-        branchId: branchStudentMapper.branchId,
-        branchName: Input.branch.find(branch => branch.id === branchStudentMapper.branchId).name,
-        studentId: branchStudentMapper.studentId,
-        studentName: Input.student.find(student => student.id === branchStudentMapper.studentId).name
+        ...branchStudent,
+        branchName: Input.branch.find(branch => branch.id === branchStudent.branchId).name,
+        studentName: Input.student.find(student => student.id === branchStudent.studentId).name
     }
-})
+}
+
+const Result = Input.branchStudent.map(branchStudentMapper) ;
 
 console.log("branchStudentMap:", Result)

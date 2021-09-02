@@ -18,13 +18,16 @@ const input = {
 let branches = input.branch
 let student = input.student
 let branchStudentList = []
+
 input.branchStudent.forEach(branchStudentItem => {
     branchStudentList.push({
+
         id: branchStudentItem.id,
         branchId: branchStudentItem.branchid,
         branchName: branches.find(list => branchStudentItem.branchid === list.id).name,
         studentId: branchStudentItem.studentid,
         studentName: student.find(student => student.id === branchStudentItem.studentid).name
+    
     })
 })
 
