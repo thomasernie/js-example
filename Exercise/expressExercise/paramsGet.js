@@ -5,9 +5,7 @@ const port = 3000
 app.get('/hello', (req, res) => {
 
     const result = req.query.name
-    res.send(
-        `Hello ${result}`
-    )
+    res.send(`Hello ${result}`)
 })
 
 app.listen(port, () => {
