@@ -15,8 +15,6 @@ app.get('/city', async (req, res) => {
         }
       }`
     
-    
-
     const citySearch = `${req.query.name}%`;
     const variables= {
         search:citySearch,limit:5
@@ -26,5 +24,5 @@ app.get('/city', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Listening at port: ${port}`);
+  console.log(`Listening at port: ${port}`);
 })
