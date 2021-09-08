@@ -1,0 +1,100 @@
+#div1{
+    width: 100%;
+    height: 150px;
+    background-color: burlywood;
+}
+#div2{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(140, 102, 51);
+}
+#div3{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(76, 48, 10);
+}
+#div4{
+    width: 100%;
+    height: 200px;
+    background-color:slategray;
+    float: left;
+}
+#div5{
+    width: 50%;
+    height: 250px;
+    float: left;
+    background-color: gold;
+}
+#div6{
+    width: 50%;
+    height: 250px;
+    float: right;
+    background-color:skyblue;
+}
+#div7{
+    width: 34%;
+    height: 250px;
+    float: right;
+    background-color:skyblue;
+}
+#div8{
+    width: 33%;
+    height: 250px;
+    float: right;
+    background-color:rgb(89, 150, 174);
+}
+#div9{
+    width: 33%;
+    height: 250px;
+    float: right;
+    background-color:rgb(36, 93, 115);
+    float: right;
+}
+#div10{
+    width: 50%;
+    height: 375px;
+    float: left;
+    background-color:skyblue;
+}
+#div11{
+    width: 50%;
+    height: 750px;
+    float: right;
+    background-color:rgb(78, 135, 157);
+}
+#div12{
+    width: 50%;
+    height: 375px;
+    float: left;
+    background-color:rgb(82, 89, 91);
+}
+#div13{
+    width: 30%;
+    height: 750px;
+    float: left;
+    background-color:rgb(55, 56, 74);
+}
+#div14{
+    width: 70%;
+    height: 250px;
+    float: right;
+    background-color:rgb(174, 224, 238);
+}
+#div15{
+    width: 70%;
+    height: 250px;
+    float: left;
+    background-color:rgba(186, 116, 62, 0.762);
+}
+#div16{
+    width: 35%;
+    height: 250px;
+    float: left;
+    background-color:rgb(139, 149, 152);
+}
+#div17{
+    width: 35%;
+    height: 250px;
+    float: right;
+    background-color:rgb(16, 25, 27);
+}
